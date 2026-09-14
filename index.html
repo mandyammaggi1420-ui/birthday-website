@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>Birthday Surprise ❤️</title>
 
 <style>
+
+/* =========================
+   BASIC
+========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -18,94 +27,151 @@ html {
 }
 
 body {
-    font-family: "Segoe UI", sans-serif;
-    background: #090909;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #070009;
     color: white;
     overflow-x: hidden;
 }
 
-/* ================= BACKGROUND ================= */
+button {
+    font-family: inherit;
+}
+
+/* =========================
+   STARS
+========================= */
 
 #stars {
     position: fixed;
     inset: 0;
     pointer-events: none;
-    z-index: -1;
+    z-index: 1;
 }
 
 .star {
     position: absolute;
+    width: 3px;
+    height: 3px;
     background: white;
     border-radius: 50%;
     animation: twinkle 2s infinite alternate;
 }
 
 @keyframes twinkle {
-    from { opacity: .2; transform: scale(.7); }
-    to { opacity: 1; transform: scale(1.2); }
+
+    from {
+        opacity: .2;
+        transform: scale(.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+
 }
 
-/* ================= INTRO ================= */
+/* =========================
+   INTRO
+========================= */
 
-.intro {
+#intro {
     min-height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     text-align: center;
+
     padding: 25px;
+
     background:
-        radial-gradient(circle at top, #4b0037, #090909 60%);
+        radial-gradient(circle at top,
+        #65004c,
+        #170012 40%,
+        #050005 80%);
 }
 
-.intro-content {
-    max-width: 600px;
-    animation: introIn 1.5s ease;
+.intro-box {
+    max-width: 650px;
+
+    animation:
+        introAppear 1.5s ease;
 }
 
-@keyframes introIn {
+@keyframes introAppear {
+
     from {
         opacity: 0;
-        transform: translateY(40px);
+        transform: translateY(40px) scale(.9);
     }
+
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
     }
+
 }
 
-.intro h1 {
-    font-size: clamp(35px, 8vw, 70px);
+.intro-small {
+    font-size: 18px;
+    color: #ffc1dc;
     margin-bottom: 15px;
 }
 
-.intro h1 span {
-    color: #ff3b81;
+.intro-box h1 {
+    font-size: clamp(38px, 9vw, 75px);
+    line-height: 1.1;
 }
 
-.intro p {
-    font-size: 20px;
+.intro-box h1 span {
+    color: #ff5c9d;
+}
+
+.intro-text {
+    margin-top: 20px;
+
+    font-size: 19px;
+
     color: #ddd;
-    margin-bottom: 35px;
+
+    line-height: 1.6;
 }
 
-.start-btn {
+.open-btn {
+    margin-top: 35px;
+
     border: none;
-    padding: 16px 35px;
+
+    padding: 17px 32px;
+
     border-radius: 50px;
-    background: linear-gradient(45deg, #ff267f, #ff69a5);
+
+    background:
+        linear-gradient(45deg,
+        #ff1675,
+        #ff71aa);
+
     color: white;
+
     font-size: 18px;
+
     cursor: pointer;
-    box-shadow: 0 0 30px #ff267f88;
+
+    box-shadow:
+        0 0 30px #ff267f88;
+
     transition: .3s;
 }
 
-.start-btn:hover {
+.open-btn:hover {
     transform: scale(1.08);
 }
 
-/* ================= MAIN ================= */
+/* =========================
+   MAIN
+========================= */
 
 #main {
     display: none;
@@ -113,546 +179,1134 @@ body {
 
 section {
     min-height: 100vh;
+
     padding: 70px 20px;
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     justify-content: center;
-}
 
-/* ================= BIRTHDAY HEADER ================= */
-
-.birthday-section {
-    background:
-        linear-gradient(to bottom, #160000, #8c0000 55%, #e60000);
     position: relative;
+
     overflow: hidden;
 }
 
-.birthday-section h1 {
-    font-size: clamp(30px, 7vw, 55px);
+/* =========================
+   BIRTHDAY SECTION
+========================= */
+
+.birthday {
+
+    background:
+        linear-gradient(
+            to bottom,
+            #130000,
+            #6f0000 45%,
+            #d80000
+        );
+
+}
+
+.birthday h1 {
+
+    font-size:
+        clamp(30px, 7vw, 58px);
+
     text-align: center;
+
+    margin-bottom: 12px;
+
+    animation: birthdayGlow 2s infinite alternate;
+
+}
+
+@keyframes birthdayGlow {
+
+    from {
+        text-shadow:
+            0 0 5px white;
+    }
+
+    to {
+        text-shadow:
+            0 0 25px #ff9fbd,
+            0 0 50px #ff2c73;
+    }
+
+}
+
+.friend-name {
+
+    font-size:
+        clamp(25px, 6vw, 45px);
+
+    color: #ffd6e5;
+
     margin-bottom: 35px;
-    text-shadow: 0 0 20px #fff;
-    animation: glow 2s infinite alternate;
+
 }
 
-@keyframes glow {
-    from { text-shadow: 0 0 5px white; }
-    to { text-shadow: 0 0 25px #ffb3c6; }
+/* =========================
+   BALLOONS
+========================= */
+
+.balloon {
+
+    position: absolute;
+
+    font-size: 55px;
+
+    animation:
+        balloonFloat 4s ease-in-out infinite;
+
 }
 
-/* ================= COUNTDOWN ================= */
+.balloon1 {
+    left: 5%;
+    top: 15%;
+}
+
+.balloon2 {
+    right: 6%;
+    top: 20%;
+
+    animation-delay: 1s;
+}
+
+.balloon3 {
+    left: 12%;
+    bottom: 10%;
+
+    animation-delay: 2s;
+}
+
+.balloon4 {
+    right: 10%;
+    bottom: 12%;
+
+    animation-delay: 1.5s;
+}
+
+@keyframes balloonFloat {
+
+    50% {
+        transform:
+            translateY(-20px)
+            rotate(5deg);
+    }
+
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
 
 .countdown {
+
+    width:
+        min(900px, 100%);
+
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
     gap: 12px;
-    width: min(850px, 100%);
+
 }
 
 .time-box {
+
     aspect-ratio: 1;
-    min-width: 70px;
+
     border-radius: 50%;
-    background: rgba(255,255,255,.18);
-    backdrop-filter: blur(10px);
+
+    background:
+        rgba(255,255,255,.16);
+
+    border:
+        1px solid
+        rgba(255,255,255,.25);
+
+    backdrop-filter:
+        blur(10px);
+
     display: flex;
+
     flex-direction: column;
+
     justify-content: center;
+
     align-items: center;
-    border: 1px solid rgba(255,255,255,.2);
-    box-shadow: 0 8px 30px #0005;
-    animation: float 3s ease-in-out infinite;
+
+    box-shadow:
+        0 10px 30px #0005;
+
+    animation:
+        softFloat 3s ease-in-out infinite;
+
 }
 
-.time-box:nth-child(2) { animation-delay: .2s; }
-.time-box:nth-child(3) { animation-delay: .4s; }
-.time-box:nth-child(4) { animation-delay: .6s; }
-.time-box:nth-child(5) { animation-delay: .8s; }
-.time-box:nth-child(6) { animation-delay: 1s; }
-.time-box:nth-child(7) { animation-delay: 1.2s; }
-
-@keyframes float {
-    50% { transform: translateY(-8px); }
+.time-box:nth-child(2) {
+    animation-delay: .2s;
 }
 
-.number {
-    font-size: 22px;
-    font-weight: bold;
-}
-
-.label {
-    font-size: 11px;
-    margin-top: 5px;
-    opacity: .8;
-}
-
-/* ================= CUTE CARDS ================= */
-
-.cute-cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    width: min(850px, 100%);
-    margin-top: 30px;
-}
-
-.cute-card {
-    height: 180px;
-    border-radius: 8px;
-    background: #e6ffff;
-    padding: 10px;
-    overflow: hidden;
-    transition: .4s;
-    animation: cardFloat 3s ease-in-out infinite;
-}
-
-.cute-card:nth-child(2) {
+.time-box:nth-child(3) {
     animation-delay: .4s;
 }
 
-.cute-card:nth-child(3) {
+.time-box:nth-child(4) {
+    animation-delay: .6s;
+}
+
+.time-box:nth-child(5) {
     animation-delay: .8s;
 }
 
-.cute-card:nth-child(4) {
+.time-box:nth-child(6) {
+    animation-delay: 1s;
+}
+
+.time-box:nth-child(7) {
     animation-delay: 1.2s;
 }
 
-.cute-card:hover {
-    transform: translateY(-12px) rotate(2deg) scale(1.04);
+@keyframes softFloat {
+
+    50% {
+        transform:
+            translateY(-8px);
+    }
+
 }
 
-.cute-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5px;
+.number {
+
+    font-size:
+        clamp(18px, 3vw, 28px);
+
+    font-weight:
+        bold;
+
+}
+
+.label {
+
+    font-size:
+        clamp(9px, 2vw, 12px);
+
+    opacity: .8;
+
+    margin-top: 5px;
+
+}
+
+.countdown-note {
+
+    margin-top: 22px;
+
+    font-size: 16px;
+
+    color: #ffe3ec;
+
+}
+
+/* =========================
+   CUTE PHOTO CARDS
+========================= */
+
+.cute-cards {
+
+    width:
+        min(900px, 100%);
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 16px;
+
+    margin-top: 35px;
+
+}
+
+.cute-card {
+
+    height: 190px;
+
+    background: #efffff;
+
+    padding: 8px;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 10px 25px #0005;
+
+    animation:
+        cardFloat 4s ease-in-out infinite;
+
+    transition: .3s;
+
+}
+
+.cute-card:nth-child(2) {
+    animation-delay: .5s;
+}
+
+.cute-card:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.cute-card:nth-child(4) {
+    animation-delay: 1.5s;
 }
 
 @keyframes cardFloat {
-    50% { transform: translateY(-5px); }
+
+    50% {
+        transform:
+            translateY(-8px);
+    }
+
 }
 
-/* ================= TITLE ================= */
+.cute-card:hover {
+
+    transform:
+        scale(1.05)
+        rotate(2deg);
+
+}
+
+.cute-card img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 5px;
+
+}
+
+/* =========================
+   SECTION TITLES
+========================= */
 
 .section-title {
-    font-size: clamp(30px, 7vw, 50px);
+
+    font-size:
+        clamp(32px, 8vw, 55px);
+
     text-align: center;
-    margin-bottom: 25px;
+
+    margin-bottom: 18px;
+
 }
 
 .subtitle {
+
+    max-width: 650px;
+
     text-align: center;
+
     color: #ccc;
-    max-width: 600px;
+
+    line-height: 1.7;
+
     margin-bottom: 35px;
+
 }
 
-/* ================= LETTER ================= */
+/* =========================
+   LETTER
+========================= */
 
 .letter-section {
-    background: radial-gradient(circle, #330021, #090909);
+
+    background:
+        radial-gradient(
+            circle at center,
+            #420026,
+            #080008 70%
+        );
+
 }
 
-.envelope {
-    width: min(600px, 95%);
-    min-height: 330px;
-    background: #fff;
-    color: #333;
-    border-radius: 12px;
+.letter {
+
+    width:
+        min(650px, 95%);
+
     padding: 35px;
-    position: relative;
-    box-shadow: 0 0 50px #ff4f9a55;
-    animation: letterFloat 4s ease-in-out infinite;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    backdrop-filter:
+        blur(15px);
+
+    box-shadow:
+        0 0 50px #ff267f33;
+
+    animation:
+        letterFloat 4s ease-in-out infinite;
+
 }
 
 @keyframes letterFloat {
-    50% { transform: translateY(-10px); }
+
+    50% {
+        transform:
+            translateY(-8px);
+    }
+
 }
 
-.envelope h2 {
-    color: #e90062;
+.letter h2 {
+
+    color: #ff73aa;
+
     margin-bottom: 20px;
+
 }
 
-.envelope p {
+.letter p {
+
     font-size: 18px;
-    line-height: 1.8;
+
+    line-height: 1.9;
+
+    color: #eee;
+
 }
 
 .signature {
+
     margin-top: 25px;
+
     text-align: right;
+
+    color: #ff75a9;
+
     font-weight: bold;
-    color: #e90062;
+
 }
 
-/* ================= CAKE ================= */
+/* =========================
+   CAKE
+========================= */
 
 .cake-section {
-    background: linear-gradient(#090909, #24000e);
+
+    background:
+        linear-gradient(
+            #090009,
+            #2c0017
+        );
+
 }
 
 .cake {
+
     position: relative;
-    width: 220px;
-    height: 220px;
-    margin: 40px auto;
+
+    width: 240px;
+
+    height: 230px;
+
+    margin: 30px auto 35px;
+
 }
 
 .cake-body {
+
     position: absolute;
+
     bottom: 0;
-    width: 220px;
-    height: 120px;
-    border-radius: 15px 15px 30px 30px;
-    background: linear-gradient(#ff82b2, #ff3c80);
-    box-shadow: 0 15px 30px #ff267f55;
+
+    width: 240px;
+
+    height: 125px;
+
+    background:
+        linear-gradient(
+            #ff8bb8,
+            #ff357e
+        );
+
+    border-radius:
+        15px 15px 30px 30px;
+
+    box-shadow:
+        0 15px 40px #ff267f55;
+
 }
 
-.cake-body::before {
+.cake-body::after {
+
     content: "";
+
     position: absolute;
-    top: 25px;
+
     width: 100%;
-    height: 15px;
+
+    height: 20px;
+
+    top: 45px;
+
     background: #fff;
+
     border-radius: 50%;
+
+    opacity: .9;
+
 }
 
 .cream {
+
     position: absolute;
+
     top: -15px;
-    width: 220px;
-    height: 50px;
-    background: #fff;
+
+    width: 240px;
+
+    height: 55px;
+
+    background: white;
+
     border-radius: 50%;
+
 }
 
 .candle {
+
     position: absolute;
-    bottom: 115px;
+
     left: 50%;
-    width: 18px;
-    height: 70px;
-    background: repeating-linear-gradient(
-        45deg,
-        #fff,
-        #fff 7px,
-        #ff4c91 7px,
-        #ff4c91 14px
-    );
-    transform: translateX(-50%);
+
+    bottom: 115px;
+
+    transform:
+        translateX(-50%);
+
+    width: 20px;
+
+    height: 75px;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            white 0 8px,
+            #ff4b91 8px 16px
+        );
+
     border-radius: 5px;
+
 }
 
 .flame {
+
     position: absolute;
-    top: -30px;
+
     left: 50%;
-    width: 20px;
-    height: 30px;
+
+    top: -32px;
+
+    width: 22px;
+
+    height: 32px;
+
     background: orange;
-    border-radius: 50% 50% 50% 0;
-    transform: translateX(-50%) rotate(-45deg);
-    box-shadow: 0 0 20px orange;
-    animation: flame 1s infinite alternate;
+
+    border-radius:
+        50% 50% 50% 0;
+
+    transform:
+        translateX(-50%)
+        rotate(-45deg);
+
+    box-shadow:
+        0 0 25px orange;
+
+    animation:
+        flameMove .8s infinite alternate;
+
 }
 
-@keyframes flame {
+@keyframes flameMove {
+
     to {
-        transform: translateX(-50%) rotate(-45deg) scale(1.15);
+        transform:
+            translateX(-50%)
+            rotate(-45deg)
+            scale(1.15);
     }
-}
 
-.blow-btn {
-    border: none;
-    background: #ff267f;
-    color: white;
-    padding: 14px 28px;
-    border-radius: 30px;
-    font-size: 17px;
-    cursor: pointer;
 }
 
 .blown .flame {
     display: none;
 }
 
-/* ================= MEMORIES ================= */
+.blow-btn {
 
-.memories-section {
-    background: #0d0012;
+    border: none;
+
+    padding:
+        14px 28px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            45deg,
+            #ff1675,
+            #ff67a1
+        );
+
+    color: white;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+}
+
+/* =========================
+   MEMORIES
+========================= */
+
+.memories {
+
+    background:
+        #0b0010;
+
 }
 
 .memory-grid {
-    width: min(900px, 100%);
+
+    width:
+        min(950px, 100%);
+
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+
 }
 
 .memory {
+
     background: white;
-    padding: 10px 10px 25px;
+
     color: #222;
-    transform: rotate(-2deg);
-    transition: .3s;
+
+    padding:
+        10px 10px 20px;
+
+    transform:
+        rotate(-2deg);
+
+    transition: .4s;
+
+    box-shadow:
+        0 15px 30px #0007;
+
 }
 
 .memory:nth-child(even) {
-    transform: rotate(2deg);
+
+    transform:
+        rotate(2deg);
+
 }
 
 .memory:hover {
-    transform: rotate(0) scale(1.05);
-    z-index: 2;
+
+    transform:
+        rotate(0)
+        scale(1.05);
+
+    z-index: 5;
+
 }
 
 .memory img {
+
     width: 100%;
+
     height: 220px;
+
     object-fit: cover;
+
 }
 
 .memory p {
+
     text-align: center;
+
     margin-top: 12px;
+
     font-weight: 600;
+
 }
 
-/* ================= FRIENDSHIP CARDS ================= */
+/* =========================
+   FRIENDSHIP
+========================= */
 
-.facts-section {
-    background: linear-gradient(#18000f, #000);
+.friendship {
+
+    background:
+        linear-gradient(
+            #19000f,
+            #030003
+        );
+
 }
 
-.facts {
-    width: min(700px, 100%);
+.fact-list {
+
+    width:
+        min(700px, 100%);
+
     display: grid;
+
     gap: 18px;
+
 }
 
 .fact {
-    padding: 25px;
+
+    padding: 24px;
+
     border-radius: 18px;
-    background: rgba(255,255,255,.08);
-    border: 1px solid #ffffff18;
-    backdrop-filter: blur(10px);
+
+    background:
+        rgba(255,255,255,.07);
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
     transition: .3s;
-    cursor: pointer;
+
 }
 
 .fact:hover {
-    transform: translateX(10px);
-    background: rgba(255,55,130,.15);
+
+    transform:
+        translateX(10px);
+
+    background:
+        rgba(255,40,120,.12);
+
 }
 
 .fact h3 {
-    color: #ff68a4;
+
+    color: #ff6da5;
+
     margin-bottom: 8px;
+
 }
 
-/* ================= GAME ================= */
+.fact p {
 
-.game-section {
-    background: radial-gradient(circle, #310019, #000);
+    color: #ddd;
+
+    line-height: 1.6;
+
+}
+
+/* =========================
+   GAME
+========================= */
+
+.game {
+
+    background:
+        radial-gradient(
+            circle,
+            #3b001d,
+            #050005
+        );
+
     text-align: center;
-}
 
-#gameArea {
-    width: min(600px, 100%);
-    height: 400px;
-    border: 2px solid #ff4c91;
-    border-radius: 20px;
-    position: relative;
-    overflow: hidden;
-    background: #120009;
-    box-shadow: 0 0 30px #ff267f33;
-}
-
-.game-heart {
-    position: absolute;
-    font-size: 35px;
-    cursor: pointer;
-    animation: heartAppear .4s ease;
-}
-
-@keyframes heartAppear {
-    from {
-        transform: scale(0);
-    }
-    to {
-        transform: scale(1);
-    }
 }
 
 .score {
-    margin: 20px;
+
     font-size: 22px;
+
+    margin-bottom: 20px;
+
+    color: #ff9bc2;
+
 }
 
-/* ================= FINAL ================= */
+#gameArea {
 
-.final-section {
-    background:
-        radial-gradient(circle at center, #650035, #050005 70%);
-    text-align: center;
+    width:
+        min(650px, 100%);
+
+    height: 400px;
+
     position: relative;
+
     overflow: hidden;
+
+    border:
+        2px solid
+        #ff4c91;
+
+    border-radius: 20px;
+
+    background:
+        rgba(0,0,0,.35);
+
 }
 
-.final-section h1 {
-    font-size: clamp(40px, 10vw, 80px);
-    color: #ff5c9d;
-    text-shadow: 0 0 30px #ff267f;
-    animation: finalGlow 1.5s infinite alternate;
+.game-heart {
+
+    position: absolute;
+
+    font-size: 36px;
+
+    cursor: pointer;
+
+    animation:
+        heartAppear .3s ease;
+
+}
+
+@keyframes heartAppear {
+
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+
+}
+
+/* =========================
+   FINAL
+========================= */
+
+.final {
+
+    background:
+        radial-gradient(
+            circle at center,
+            #650036,
+            #050005 70%
+        );
+
+    text-align: center;
+
+}
+
+.final h1 {
+
+    font-size:
+        clamp(42px, 10vw, 85px);
+
+    color: #ff63a2;
+
+    text-shadow:
+        0 0 30px #ff267f;
+
+    animation:
+        finalGlow 1.5s infinite alternate;
+
 }
 
 @keyframes finalGlow {
+
     to {
-        transform: scale(1.04);
-        text-shadow: 0 0 60px #ff267f;
+
+        transform:
+            scale(1.04);
+
+        text-shadow:
+            0 0 60px #ff267f;
+
     }
+
+}
+
+.final h2 {
+
+    margin-top: 15px;
+
+    font-size:
+        clamp(22px, 5vw, 35px);
+
 }
 
 .final-message {
-    max-width: 700px;
-    font-size: 20px;
-    line-height: 1.9;
+
+    max-width: 720px;
+
     margin-top: 25px;
+
+    font-size: 19px;
+
+    line-height: 2;
+
     color: #eee;
+
 }
 
-/* ================= HEARTS ================= */
+/* =========================
+   FLOATING HEARTS
+========================= */
 
 .heart {
+
     position: fixed;
+
     bottom: -50px;
+
     pointer-events: none;
-    animation: rise 5s linear forwards;
-    z-index: 10;
+
+    z-index: 20;
+
+    animation:
+        heartRise 5s linear forwards;
+
 }
 
-@keyframes rise {
+@keyframes heartRise {
+
     to {
-        transform: translateY(-110vh) rotate(360deg);
+
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
         opacity: 0;
+
     }
+
 }
 
-/* ================= CONFETTI ================= */
+/* =========================
+   CONFETTI
+========================= */
 
 .confetti {
+
     position: fixed;
-    width: 10px;
-    height: 15px;
+
     top: -20px;
+
+    width: 10px;
+
+    height: 15px;
+
     z-index: 100;
-    animation: fall 4s linear forwards;
+
+    animation:
+        confettiFall 4s linear forwards;
+
 }
 
-@keyframes fall {
+@keyframes confettiFall {
+
     to {
-        transform: translateY(110vh) rotate(720deg);
+
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
     }
+
 }
 
-/* ================= MOBILE ================= */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width: 700px) {
 
     section {
-        padding: 60px 15px;
+        padding:
+            60px 15px;
     }
 
     .countdown {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 10px;
-    }
 
-    .time-box {
-        min-width: 65px;
-    }
+        grid-template-columns:
+            repeat(4, 1fr);
 
-    .number {
-        font-size: 18px;
-    }
+        gap: 9px;
 
-    .label {
-        font-size: 9px;
     }
 
     .cute-cards {
-        grid-template-columns: repeat(2, 1fr);
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
     }
 
     .cute-card {
+
         height: 150px;
+
     }
 
     .memory-grid {
-        grid-template-columns: 1fr 1fr;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
     }
 
     .memory img {
+
         height: 160px;
+
     }
 
-    .envelope {
+    .letter {
+
         padding: 25px;
+
     }
 
-    .envelope p {
+    .letter p {
+
         font-size: 16px;
+
     }
 
     #gameArea {
+
         height: 350px;
+
     }
+
+    .balloon {
+
+        font-size: 40px;
+
+    }
+
 }
 
-@media(max-width: 400px) {
+@media(max-width: 420px) {
 
     .countdown {
-        grid-template-columns: repeat(3, 1fr);
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
     }
 
     .memory-grid {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+            1fr;
+
     }
 
     .memory img {
+
         height: 240px;
+
     }
+
 }
+
+/* =========================
+   BIRTHDAY DAY MODE
+========================= */
+
+.birthday-today {
+
+    font-size:
+        clamp(25px, 6vw, 45px);
+
+    color: #fff;
+
+    text-shadow:
+        0 0 20px #ff267f;
+
+    margin-bottom: 25px;
+
+    animation:
+        birthdayGlow 1s infinite alternate;
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- STARS -->
+
 <div id="stars"></div>
 
-<!-- ================= INTRO ================= -->
 
-<div class="intro" id="intro">
+<!-- =========================
+     INTRO
+========================= -->
 
-    <div class="intro-content">
+<div id="intro">
+
+    <div class="intro-box">
+
+        <div class="intro-small">
+            ✨ A little something I made for you ✨
+        </div>
 
         <h1>
-            A Little Surprise<br>
-            For <span>You ❤️</span>
+            Happy Birthday<br>
+            <span>My Friend ❤️</span>
         </h1>
 
-        <p>
-            When you code an animated birthday surprise
-            for your favourite person...
+        <p class="intro-text">
+
+            When you don't buy a gift...
+
+            <br>
+
+            you code one instead. 😌❤️
+
         </p>
 
-        <button class="start-btn" onclick="startSurprise()">
-            ✨ Open Your Surprise ✨
+        <button
+            class="open-btn"
+            onclick="startWebsite()">
+
+            💖 Open Your Surprise 💖
+
         </button>
 
     </div>
@@ -660,76 +1314,182 @@ section {
 </div>
 
 
-<!-- ================= MAIN ================= -->
+<!-- =========================
+     MAIN
+========================= -->
 
 <div id="main">
 
 
-<!-- ================= BIRTHDAY ================= -->
+<!-- =========================
+     BIRTHDAY
+========================= -->
 
-<section class="birthday-section">
+<section class="birthday">
+
+    <div class="balloon balloon1">
+        🎈
+    </div>
+
+    <div class="balloon balloon2">
+        🎈
+    </div>
+
+    <div class="balloon balloon3">
+        🎈
+    </div>
+
+    <div class="balloon balloon4">
+        🎈
+    </div>
+
 
     <h1>
         🎉 Happy Birthday! 🎉
     </h1>
 
+    <div class="friend-name">
+        YOUR FRIEND ❤️
+    </div>
+
+    <div
+        id="birthdayToday"
+        class="birthday-today"
+        style="display:none;">
+
+        🎂 TODAY IS YOUR DAY! 🎂
+
+    </div>
+
+
+    <!-- COUNTDOWN -->
+
     <div class="countdown">
 
         <div class="time-box">
-            <div class="number" id="years">0</div>
-            <div class="label">Years</div>
+            <div
+                class="number"
+                id="years">
+                0
+            </div>
+
+            <div class="label">
+                Years
+            </div>
         </div>
 
-        <div class="time-box">
-            <div class="number" id="months">0</div>
-            <div class="label">Months</div>
-        </div>
 
         <div class="time-box">
-            <div class="number" id="weeks">0</div>
-            <div class="label">Weeks</div>
+            <div
+                class="number"
+                id="months">
+                0
+            </div>
+
+            <div class="label">
+                Months
+            </div>
         </div>
 
-        <div class="time-box">
-            <div class="number" id="days">0</div>
-            <div class="label">Days</div>
-        </div>
 
         <div class="time-box">
-            <div class="number" id="hours">0</div>
-            <div class="label">Hours</div>
+            <div
+                class="number"
+                id="weeks">
+                0
+            </div>
+
+            <div class="label">
+                Weeks
+            </div>
         </div>
 
-        <div class="time-box">
-            <div class="number" id="minutes">0</div>
-            <div class="label">Minutes</div>
-        </div>
 
         <div class="time-box">
-            <div class="number" id="seconds">0</div>
-            <div class="label">Seconds</div>
+            <div
+                class="number"
+                id="days">
+                0
+            </div>
+
+            <div class="label">
+                Days
+            </div>
+        </div>
+
+
+        <div class="time-box">
+            <div
+                class="number"
+                id="hours">
+                0
+            </div>
+
+            <div class="label">
+                Hours
+            </div>
+        </div>
+
+
+        <div class="time-box">
+            <div
+                class="number"
+                id="minutes">
+                0
+            </div>
+
+            <div class="label">
+                Minutes
+            </div>
+        </div>
+
+
+        <div class="time-box">
+            <div
+                class="number"
+                id="seconds">
+                0
+            </div>
+
+            <div class="label">
+                Seconds
+            </div>
         </div>
 
     </div>
 
 
-    <!-- CHANGE THESE IMAGES -->
+    <div class="countdown-note">
+        🎂 Counting down to your next birthday...
+    </div>
+
+
+    <!-- FOUR CUTE PHOTO CARDS -->
+
     <div class="cute-cards">
 
         <div class="cute-card">
-            <img src="photo1.jpg">
+            <img
+                src="photo1.jpg"
+                alt="Birthday memory">
         </div>
 
         <div class="cute-card">
-            <img src="photo2.jpg">
+            <img
+                src="photo2.jpg"
+                alt="Birthday memory">
         </div>
 
         <div class="cute-card">
-            <img src="photo3.jpg">
+            <img
+                src="photo3.jpg"
+                alt="Birthday memory">
         </div>
 
         <div class="cute-card">
-            <img src="photo4.jpg">
+            <img
+                src="photo4.jpg"
+                alt="Birthday memory">
         </div>
 
     </div>
@@ -737,7 +1497,9 @@ section {
 </section>
 
 
-<!-- ================= LETTER ================= -->
+<!-- =========================
+     LETTER
+========================= -->
 
 <section class="letter-section">
 
@@ -746,34 +1508,65 @@ section {
     </h2>
 
     <p class="subtitle">
-        Something I wanted to tell you on your special day...
+        I couldn't buy you a gift...
+        so I made you this instead. ❤️
     </p>
 
-    <div class="envelope">
 
-        <h2>Dear Bestie ❤️</h2>
+    <div class="letter">
+
+        <h2>
+            Dear Friend ❤️
+        </h2>
 
         <p>
-            Happy Birthday to one of the most special people
-            in my life! 🥹❤️
+
+            Happy Birthday! 🥹❤️
+
             <br><br>
 
-            We have laughed, fought, annoyed each other,
-            shared crazy moments and created so many memories.
+            Today is your special day,
+            and I just wanted to make
+            something that is a little
+            different from an ordinary
+            birthday wish.
+
+            <br><br>
+
+            We've had our funny moments,
+            stupid conversations,
+            arguments, laughs and memories.
+
             😂🫶
+
             <br><br>
 
-            I may not have a physical gift for you,
-            but I wanted to create something that you can
-            keep forever.
+            Some friendships are difficult
+            to explain because there are
+            so many little moments behind them.
+
             <br><br>
 
-            So this little website is your birthday gift. ❤️
+            So instead of giving you
+            an ordinary gift...
+
+            <br><br>
+
+            I made this little website
+            just for you. ❤️
+
+            <br><br>
+
+            I hope you smile while going
+            through it.
+
         </p>
 
+
         <div class="signature">
-            With lots of love,<br>
-            Your Friend 💕
+
+            From your friend 💕
+
         </div>
 
     </div>
@@ -781,7 +1574,9 @@ section {
 </section>
 
 
-<!-- ================= CAKE ================= -->
+<!-- =========================
+     CAKE
+========================= -->
 
 <section class="cake-section">
 
@@ -790,10 +1585,17 @@ section {
     </h2>
 
     <p class="subtitle">
-        Close your eyes... make a wish... ✨
+
+        Close your eyes...
+        make a wish...
+        and blow the candle. ✨
+
     </p>
 
-    <div class="cake" id="cake">
+
+    <div
+        class="cake"
+        id="cake">
 
         <div class="cream"></div>
 
@@ -807,175 +1609,295 @@ section {
 
     </div>
 
-    <button class="blow-btn" onclick="blowCandle()">
+
+    <button
+        class="blow-btn"
+        onclick="blowCandle()">
+
         💨 Blow The Candle
+
     </button>
 
 </section>
 
 
-<!-- ================= MEMORIES ================= -->
+<!-- =========================
+     MEMORIES
+========================= -->
 
-<section class="memories-section">
+<section class="memories">
 
     <h2 class="section-title">
         📸 Our Memories
     </h2>
 
     <p class="subtitle">
-        Some moments that deserve to stay forever ❤️
+
+        Some moments are worth keeping
+        forever. ❤️
+
     </p>
+
 
     <div class="memory-grid">
 
-        <div class="memory">
-            <img src="memory1.jpg">
-            <p>Our crazy moment 😂</p>
-        </div>
 
         <div class="memory">
-            <img src="memory2.jpg">
-            <p>That unforgettable day 🥹</p>
+
+            <img
+                src="memory1.jpg"
+                alt="Memory 1">
+
+            <p>
+                Our crazy moment 😂
+            </p>
+
         </div>
 
-        <div class="memory">
-            <img src="memory3.jpg">
-            <p>Still laughing about this 😭</p>
-        </div>
 
         <div class="memory">
-            <img src="memory4.jpg">
-            <p>One of my favourite memories ❤️</p>
+
+            <img
+                src="memory2.jpg"
+                alt="Memory 2">
+
+            <p>
+                One unforgettable day ❤️
+            </p>
+
         </div>
 
-        <div class="memory">
-            <img src="memory5.jpg">
-            <p>Us being us 🫶</p>
-        </div>
 
         <div class="memory">
-            <img src="memory6.jpg">
-            <p>More memories to come ✨</p>
+
+            <img
+                src="memory3.jpg"
+                alt="Memory 3">
+
+            <p>
+                Still laughing about this 😭
+            </p>
+
         </div>
+
+
+        <div class="memory">
+
+            <img
+                src="memory4.jpg"
+                alt="Memory 4">
+
+            <p>
+                A favourite memory 🫶
+            </p>
+
+        </div>
+
+
+        <div class="memory">
+
+            <img
+                src="memory5.jpg"
+                alt="Memory 5">
+
+            <p>
+                Us being us 😂
+            </p>
+
+        </div>
+
+
+        <div class="memory">
+
+            <img
+                src="memory6.jpg"
+                alt="Memory 6">
+
+            <p>
+                More memories to come ✨
+            </p>
+
+        </div>
+
 
     </div>
 
 </section>
 
 
-<!-- ================= FRIENDSHIP ================= -->
+<!-- =========================
+     FRIENDSHIP
+========================= -->
 
-<section class="facts-section">
+<section class="friendship">
 
     <h2 class="section-title">
         😂 Things About You
     </h2>
 
     <p class="subtitle">
-        Things that make you... YOU.
+        Some completely accurate facts about you. 😌
     </p>
 
-    <div class="facts">
+
+    <div class="fact-list">
+
 
         <div class="fact">
-            <h3>😂 Most likely to...</h3>
-            <p>Start laughing at the worst possible moment.</p>
+
+            <h3>
+                😂 Most likely to...
+            </h3>
+
+            <p>
+                Start laughing at something
+                when everyone else is serious.
+            </p>
+
         </div>
 
-        <div class="fact">
-            <h3>🤦 Your special talent</h3>
-            <p>Annoying me and making me laugh at the same time.</p>
-        </div>
 
         <div class="fact">
-            <h3>❤️ Something I appreciate</h3>
-            <p>You always manage to make ordinary days memorable.</p>
+
+            <h3>
+                🤦 Your special talent
+            </h3>
+
+            <p>
+                Annoying me and making me laugh
+                at the exact same time.
+            </p>
+
         </div>
 
+
         <div class="fact">
-            <h3>🥹 One thing I'll never forget</h3>
-            <p>All the stupid memories we've made together.</p>
+
+            <h3>
+                🫶 Something I appreciate
+            </h3>
+
+            <p>
+                You have a way of making
+                ordinary days memorable.
+            </p>
+
         </div>
+
+
+        <div class="fact">
+
+            <h3>
+                🥹 One thing I'll remember
+            </h3>
+
+            <p>
+                All the random little moments
+                that somehow became memories.
+            </p>
+
+        </div>
+
 
     </div>
 
 </section>
 
 
-<!-- ================= GAME ================= -->
+<!-- =========================
+     GAME
+========================= -->
 
-<section class="game-section">
+<section class="game">
 
     <h2 class="section-title">
         💗 Catch The Hearts
     </h2>
 
     <p class="subtitle">
-        Catch 10 hearts to unlock the final surprise!
+
+        Catch 10 hearts to unlock
+        the final birthday surprise!
+
     </p>
 
+
     <div class="score">
-        Hearts: <span id="score">0</span> / 10
+
+        Hearts:
+        <span id="score">
+            0
+        </span>
+        / 10
+
     </div>
+
 
     <div id="gameArea"></div>
 
 </section>
 
 
-<!-- ================= FINAL ================= -->
+<!-- =========================
+     FINAL
+========================= -->
 
-<section class="final-section" id="final">
+<section class="final" id="final">
 
     <h1>
-        Happy Birthday ❤️
+        HAPPY BIRTHDAY ❤️
     </h1>
 
-    <h2 style="margin-top:20px;">
-        My Dear Friend! 🥹
+    <h2>
+        You're 20! 🎂🎉
     </h2>
+
 
     <p class="final-message">
 
-        You deserve all the happiness in the world. 🌎❤️
+        You deserve all the happiness
+        in the world. 🌎❤️
 
         <br><br>
 
         Thank you for being part of my life,
-        for all the laughs, the madness,
-        the arguments and every little memory.
+        for the laughs, the madness,
+        the arguments and all the memories.
 
         <br><br>
 
-        I didn't buy you a gift...
+        I didn't buy you a physical gift...
 
         <br><br>
 
         <strong>
-            I made you a little piece of the internet instead. ❤️
+            I made you a little piece
+            of the internet instead. ❤️
         </strong>
 
         <br><br>
 
-        And whenever you see this website,
-        I hope you remember how special
-        you are to me.
+        Whenever you see this website,
+        I hope you remember that
+        you are genuinely special.
 
         <br><br>
 
-        Here's to many more memories,
-        stupid conversations,
-        crazy adventures and birthdays together. 🫶
+        Here's to more stupid conversations,
+        more crazy memories,
+        more laughter
+        and many more birthdays. 🫶
 
         <br><br>
 
         <strong>
-            HAPPY BIRTHDAY!!! 🎂🎉❤️
+            HAPPY 20TH BIRTHDAY!!! 🎂🎉❤️
         </strong>
 
     </p>
 
 </section>
+
 
 </div>
 
@@ -983,43 +1905,56 @@ section {
 <script>
 
 /* =====================================================
-   CHANGE THESE DETAILS
+   CHANGE ONLY THESE DETAILS
 ===================================================== */
 
-/* Friend's name */
+/*
+   PUT YOUR FRIEND'S NAME HERE
+*/
+
 const friendName = "YOUR FRIEND";
 
+
 /*
-   Birthday date
+   HIS DATE OF BIRTH
 
-   Example:
-   September 20, 2005
-
-   Format:
-   YYYY-MM-DD
+   15 September 2006
 */
-const birthday = new Date("2005-09-20T00:00:00");
+
+const birthDate =
+    new Date("2006-09-15T00:00:00");
 
 
 /* =====================================================
    START WEBSITE
 ===================================================== */
 
-function startSurprise() {
+function startWebsite() {
 
-    document.getElementById("intro").style.display = "none";
+    document.getElementById("intro")
+        .style.display = "none";
 
-    document.getElementById("main").style.display = "block";
+    document.getElementById("main")
+        .style.display = "block";
 
     createStars();
 
-    createHearts();
+    startFloatingHearts();
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+    createGameHeart();
+
+    window.scrollTo(0, 0);
+
 }
+
+
+/* =====================================================
+   PUT NAME INTO WEBSITE
+===================================================== */
+
+document.querySelector(".friend-name")
+    .textContent =
+    friendName + " ❤️";
 
 
 /* =====================================================
@@ -1028,154 +1963,370 @@ function startSurprise() {
 
 function createStars() {
 
-    const container = document.getElementById("stars");
+    const stars =
+        document.getElementById("stars");
 
-    for(let i = 0; i < 100; i++) {
+    for (
+        let i = 0;
+        i < 120;
+        i++
+    ) {
 
-        const star = document.createElement("div");
+        const star =
+            document.createElement("div");
 
         star.className = "star";
 
-        star.style.left = Math.random() * 100 + "%";
-        star.style.top = Math.random() * 100 + "%";
+        star.style.left =
+            Math.random() * 100 + "%";
 
-        const size = Math.random() * 3 + 1;
+        star.style.top =
+            Math.random() * 100 + "%";
 
-        star.style.width = size + "px";
-        star.style.height = size + "px";
+        const size =
+            Math.random() * 3 + 1;
+
+        star.style.width =
+            size + "px";
+
+        star.style.height =
+            size + "px";
 
         star.style.animationDelay =
             Math.random() * 3 + "s";
 
-        container.appendChild(star);
+        stars.appendChild(star);
+
     }
+
 }
 
 
 /* =====================================================
-   AGE COUNTDOWN
+   BIRTHDAY COUNTDOWN
 ===================================================== */
+
+function getNextBirthday() {
+
+    const now =
+        new Date();
+
+    let nextBirthday =
+        new Date(
+            now.getFullYear(),
+            8,
+            15,
+            0,
+            0,
+            0
+        );
+
+    /*
+       If this year's birthday
+       has already passed,
+       use next year.
+    */
+
+    if (
+        now.getTime() >
+        nextBirthday.getTime()
+    ) {
+
+        nextBirthday =
+            new Date(
+                now.getFullYear() + 1,
+                8,
+                15,
+                0,
+                0,
+                0
+            );
+
+    }
+
+    return nextBirthday;
+
+}
+
 
 function updateCountdown() {
 
-    const now = new Date();
+    const now =
+        new Date();
 
-    let years = now.getFullYear() - birthday.getFullYear();
+    const nextBirthday =
+        getNextBirthday();
 
-    let months =
-        now.getMonth() - birthday.getMonth();
 
-    let days =
-        now.getDate() - birthday.getDate();
+    /*
+       Check whether today
+       is September 15
+    */
 
-    if(days < 0) {
+    const isBirthdayToday =
+        now.getMonth() === 8 &&
+        now.getDate() === 15;
 
-        months--;
 
-        const previousMonth =
-            new Date(
-                now.getFullYear(),
-                now.getMonth(),
-                0
-            ).getDate();
+    if (isBirthdayToday) {
 
-        days += previousMonth;
+        document.getElementById(
+            "birthdayToday"
+        ).style.display = "block";
+
+        /*
+           Show the age:
+           2026 - 2006 = 20
+        */
+
+        const age =
+            now.getFullYear()
+            - birthDate.getFullYear();
+
+        document.querySelector(
+            ".birthday h1"
+        ).textContent =
+            "🎉 HAPPY BIRTHDAY! 🎉";
+
+        document.querySelector(
+            ".countdown-note"
+        ).textContent =
+            "🎂 You're officially " +
+            age +
+            " years old! 🎂";
+
     }
 
-    if(months < 0) {
 
-        years--;
-        months += 12;
+    /*
+       Time remaining
+    */
+
+    const difference =
+        nextBirthday - now;
+
+
+    /*
+       If birthday is today,
+       countdown becomes zero.
+    */
+
+    if (isBirthdayToday) {
+
+        document.getElementById(
+            "years"
+        ).textContent = "20";
+
+        document.getElementById(
+            "months"
+        ).textContent = "0";
+
+        document.getElementById(
+            "weeks"
+        ).textContent = "0";
+
+        document.getElementById(
+            "days"
+        ).textContent = "0";
+
+        document.getElementById(
+            "hours"
+        ).textContent = "0";
+
+        document.getElementById(
+            "minutes"
+        ).textContent = "0";
+
+        document.getElementById(
+            "seconds"
+        ).textContent = "0";
+
+        return;
+
     }
 
-    const diff = now - birthday;
 
-    const totalSeconds =
-        Math.floor(diff / 1000);
+    /*
+       Calculate countdown
+    */
 
-    const totalMinutes =
-        Math.floor(totalSeconds / 60);
+    let totalSeconds =
+        Math.floor(
+            difference / 1000
+        );
 
-    const totalHours =
-        Math.floor(totalMinutes / 60);
 
-    const totalDays =
-        Math.floor(totalHours / 24);
+    const days =
+        Math.floor(
+            totalSeconds /
+            (24 * 60 * 60)
+        );
+
+
+    totalSeconds -=
+        days *
+        24 *
+        60 *
+        60;
+
+
+    const hours =
+        Math.floor(
+            totalSeconds /
+            (60 * 60)
+        );
+
+
+    totalSeconds -=
+        hours *
+        60 *
+        60;
+
+
+    const minutes =
+        Math.floor(
+            totalSeconds / 60
+        );
+
+
+    const seconds =
+        totalSeconds % 60;
+
+
+    /*
+       Weeks
+    */
 
     const weeks =
-        Math.floor(totalDays / 7);
+        Math.floor(days / 7);
 
-    document.getElementById("years").textContent =
-        years;
 
-    document.getElementById("months").textContent =
-        months;
+    /*
+       Months approximation
+       for visual countdown
+    */
 
-    document.getElementById("weeks").textContent =
-        weeks;
+    const months =
+        Math.floor(days / 30);
 
-    document.getElementById("days").textContent =
-        days;
 
-    document.getElementById("hours").textContent =
-        now.getHours();
+    /*
+       Years until next birthday
+    */
 
-    document.getElementById("minutes").textContent =
-        now.getMinutes();
+    const years =
+        nextBirthday.getFullYear()
+        - now.getFullYear();
 
-    document.getElementById("seconds").textContent =
-        now.getSeconds();
+
+    document.getElementById(
+        "years"
+    ).textContent = years;
+
+
+    document.getElementById(
+        "months"
+    ).textContent = months;
+
+
+    document.getElementById(
+        "weeks"
+    ).textContent = weeks;
+
+
+    document.getElementById(
+        "days"
+    ).textContent = days;
+
+
+    document.getElementById(
+        "hours"
+    ).textContent = hours;
+
+
+    document.getElementById(
+        "minutes"
+    ).textContent =
+        String(minutes).padStart(
+            2,
+            "0"
+        );
+
+
+    document.getElementById(
+        "seconds"
+    ).textContent =
+        String(seconds).padStart(
+            2,
+            "0"
+        );
+
 }
 
-setInterval(updateCountdown, 1000);
 
 updateCountdown();
+
+setInterval(
+    updateCountdown,
+    1000
+);
 
 
 /* =====================================================
    FLOATING HEARTS
 ===================================================== */
 
-function createHearts() {
+function startFloatingHearts() {
 
     setInterval(() => {
 
         const heart =
             document.createElement("div");
 
-        heart.className = "heart";
+        heart.className =
+            "heart";
 
-        const hearts = [
+        const symbols = [
             "❤️",
             "💕",
             "💗",
             "💖",
             "💓",
-            "💞",
             "✨"
         ];
 
         heart.textContent =
-            hearts[Math.floor(Math.random() * hearts.length)];
+            symbols[
+                Math.floor(
+                    Math.random() *
+                    symbols.length
+                )
+            ];
 
         heart.style.left =
             Math.random() * 100 + "vw";
 
         heart.style.fontSize =
-            (Math.random() * 20 + 15) + "px";
+            Math.random() * 20 + 15
+            + "px";
 
-        document.body.appendChild(heart);
+        document.body.appendChild(
+            heart
+        );
 
         setTimeout(() => {
+
             heart.remove();
+
         }, 5000);
 
-    }, 800);
+    }, 900);
+
 }
 
 
 /* =====================================================
-   BLOW CANDLE
+   CAKE
 ===================================================== */
 
 function blowCandle() {
@@ -1184,15 +2335,6 @@ function blowCandle() {
         .classList.add("blown");
 
     createConfetti();
-
-    setTimeout(() => {
-
-        alert(
-            "✨ Wish made! ✨\n\n" +
-            "May all your wishes come true! ❤️"
-        );
-
-    }, 500);
 
 }
 
@@ -1203,32 +2345,44 @@ function blowCandle() {
 
 function createConfetti() {
 
-    for(let i = 0; i < 120; i++) {
+    for (
+        let i = 0;
+        i < 150;
+        i++
+    ) {
 
         const piece =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
 
-        piece.className = "confetti";
+        piece.className =
+            "confetti";
 
         piece.style.left =
             Math.random() * 100 + "vw";
 
-        piece.style.animationDelay =
-            Math.random() * 2 + "s";
-
         piece.style.background =
-            `hsl(${Math.random() * 360}, 100%, 65%)`;
+            "hsl(" +
+            Math.random() * 360 +
+            ", 100%, 65%)";
 
-        piece.style.transform =
-            `rotate(${Math.random() * 360}deg)`;
+        piece.style.animationDelay =
+            Math.random() * 1.5 +
+            "s";
 
-        document.body.appendChild(piece);
+        document.body.appendChild(
+            piece
+        );
 
         setTimeout(() => {
+
             piece.remove();
+
         }, 5000);
 
     }
+
 }
 
 
@@ -1238,108 +2392,121 @@ function createConfetti() {
 
 let score = 0;
 
+
 const gameArea =
-    document.getElementById("gameArea");
+    document.getElementById(
+        "gameArea"
+    );
+
 
 function createGameHeart() {
 
-    if(score >= 10) return;
+    if (score >= 10)
+        return;
+
+
+    /*
+       Don't create multiple
+       hearts at the same time.
+    */
+
+    if (
+        gameArea.children.length > 0
+    )
+        return;
+
 
     const heart =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
-    heart.className = "game-heart";
+    heart.className =
+        "game-heart";
 
-    heart.textContent = "💗";
+    heart.textContent =
+        "💗";
+
 
     heart.style.left =
         Math.random() * 85 + "%";
 
+
     heart.style.top =
         Math.random() * 80 + "%";
+
 
     heart.onclick = function() {
 
         score++;
 
-        document.getElementById("score")
-            .textContent = score;
+
+        document.getElementById(
+            "score"
+        ).textContent =
+            score;
+
 
         heart.remove();
 
-        if(score >= 10) {
+
+        if (score >= 10) {
 
             createConfetti();
 
+
             setTimeout(() => {
 
-                alert(
-                    "🎉 YOU DID IT! 🎉\n\n" +
-                    "The final surprise is waiting for you ❤️"
-                );
+                document.getElementById(
+                    "final"
+                ).scrollIntoView({
+                    behavior: "smooth"
+                });
 
-                document.getElementById("final")
-                    .scrollIntoView({
-                        behavior: "smooth"
-                    });
+            }, 700);
 
-            }, 500);
 
         } else {
 
-            setTimeout(createGameHeart, 300);
+            setTimeout(
+                createGameHeart,
+                250
+            );
+
         }
 
     };
 
-    gameArea.appendChild(heart);
+
+    gameArea.appendChild(
+        heart
+    );
+
 }
-
-setInterval(() => {
-
-    if(
-        document.getElementById("main").style.display !== "none" &&
-        score < 10 &&
-        gameArea.children.length === 0
-    ) {
-        createGameHeart();
-    }
-
-}, 1000);
 
 
 /* =====================================================
-   FINAL CONFETTI WHEN SCROLLING
+   KEEP GAME RUNNING
 ===================================================== */
 
-let finalShown = false;
+setInterval(() => {
 
-window.addEventListener("scroll", () => {
-
-    const final =
-        document.getElementById("final");
-
-    if(!final) return;
-
-    const rect =
-        final.getBoundingClientRect();
-
-    if(
-        rect.top < window.innerHeight * .7 &&
-        !finalShown
+    if (
+        document.getElementById(
+            "main"
+        ).style.display !== "none" &&
+        score < 10
     ) {
 
-        finalShown = true;
-
-        setTimeout(() => {
-            createConfetti();
-        }, 500);
+        createGameHeart();
 
     }
 
-});
+}, 1200);
+
 
 </script>
 
 </body>
+
 </html>
