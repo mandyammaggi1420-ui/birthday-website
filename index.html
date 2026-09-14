@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Rohith's 19th Birthday ❤️</title>
+<title>Happy Birthday Rohith ❤️</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Pacifico&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 *{
     margin:0;
@@ -21,688 +23,1278 @@ html{
 
 body{
     font-family:'Poppins',sans-serif;
-    background:#fff0f6;
-    color:#54263f;
+    background:#fff1f6;
+    color:#59334a;
     overflow-x:hidden;
 }
 
-/* ---------------- BACKGROUND ---------------- */
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
 
 .bg-heart{
     position:fixed;
     bottom:-50px;
-    font-size:25px;
-    opacity:.35;
-    animation:floatHeart linear infinite;
     pointer-events:none;
     z-index:0;
+    opacity:.4;
+    animation:floatHeart linear infinite;
 }
 
 @keyframes floatHeart{
+
     0%{
         transform:translateY(0) rotate(0deg);
         opacity:0;
     }
+
     15%{
-        opacity:.5;
+        opacity:.45;
     }
+
     100%{
         transform:translateY(-110vh) rotate(360deg);
         opacity:0;
     }
+
 }
 
-/* ---------------- HERO ---------------- */
+
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero{
+
     min-height:100vh;
-    position:relative;
+
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
+
     text-align:center;
+
     padding:40px 20px;
+
+    position:relative;
     overflow:hidden;
+
     background:
-        radial-gradient(circle at 20% 20%,#ffd7e8 0%,transparent 30%),
-        radial-gradient(circle at 80% 30%,#ffe4ef 0%,transparent 30%),
-        linear-gradient(135deg,#fff0f6,#ffe4ee,#fff7fa);
+        radial-gradient(circle at 15% 20%,#ffd3e5,transparent 30%),
+        radial-gradient(circle at 85% 25%,#ffe0ec,transparent 30%),
+        linear-gradient(135deg,#fff0f6,#ffe4ef,#fff7fa);
 }
 
 .hero-content{
+
     position:relative;
-    z-index:2;
-    animation:heroAppear 1.5s ease;
+    z-index:3;
+
+    animation:heroIn 1.5s ease forwards;
 }
 
-@keyframes heroAppear{
+@keyframes heroIn{
+
     from{
         opacity:0;
-        transform:translateY(50px) scale(.9);
+        transform:translateY(60px) scale(.9);
     }
+
     to{
         opacity:1;
         transform:translateY(0) scale(1);
     }
+
 }
 
 .small-intro{
-    font-size:18px;
+
+    color:#c72e65;
+
+    font-size:16px;
+
     letter-spacing:4px;
-    color:#bd3267;
-    margin-bottom:20px;
-    animation:pulse 2s infinite;
+
+    margin-bottom:22px;
+
+    animation:softPulse 2s infinite;
 }
 
-@keyframes pulse{
-    0%,100%{opacity:.7}
-    50%{opacity:1}
+@keyframes softPulse{
+
+    0%,100%{
+        opacity:.65;
+    }
+
+    50%{
+        opacity:1;
+    }
+
 }
 
 .hero h1{
-    font-size:clamp(50px,9vw,100px);
-    line-height:1;
-    color:#d52f69;
-    text-shadow:0 8px 25px rgba(213,47,105,.2);
+
+    font-size:clamp(55px,10vw,105px);
+
+    line-height:1.05;
+
+    color:#d62f69;
+
+    text-shadow:
+        0 10px 30px rgba(214,47,105,.18);
 }
 
 .hero h1 span{
+
     font-family:'Pacifico',cursive;
-    color:#ff4f88;
+
+    color:#f34b84;
 }
 
 .hero-sub{
-    font-size:20px;
-    margin:25px 0;
+
+    margin:25px auto;
+
+    max-width:700px;
+
+    font-size:19px;
+
+    line-height:1.8;
 }
 
 .scroll-btn{
+
     display:inline-block;
-    padding:14px 30px;
-    border-radius:40px;
-    background:#d52f69;
+
+    padding:15px 32px;
+
+    background:#d62f69;
+
     color:white;
+
     text-decoration:none;
-    box-shadow:0 10px 30px rgba(213,47,105,.3);
+
+    border-radius:50px;
+
+    box-shadow:
+        0 12px 30px rgba(214,47,105,.3);
+
     transition:.3s;
 }
 
 .scroll-btn:hover{
-    transform:translateY(-5px) scale(1.05);
+
+    transform:
+        translateY(-6px)
+        scale(1.05);
+
+    box-shadow:
+        0 18px 40px rgba(214,47,105,.4);
 }
 
-/* balloons */
+
+/* =====================================================
+   BALLOONS
+===================================================== */
 
 .balloon{
+
     position:absolute;
+
     width:60px;
     height:75px;
+
     border-radius:50%;
+
     animation:balloonFloat 4s ease-in-out infinite;
+
     opacity:.75;
 }
 
 .balloon:after{
+
     content:"";
+
     position:absolute;
+
     width:2px;
     height:100px;
-    background:#9e6b80;
-    top:70px;
+
+    background:#9b7183;
+
     left:50%;
+    top:70px;
 }
 
 .b1{
     background:#ff709f;
-    left:8%;
-    top:18%;
+    left:7%;
+    top:20%;
 }
 
 .b2{
-    background:#ffc3d8;
-    right:10%;
-    top:25%;
+    background:#ffc0d7;
+    right:9%;
+    top:23%;
     animation-delay:1s;
 }
 
 .b3{
-    background:#ffb0c9;
+    background:#ffabc7;
     left:15%;
     bottom:15%;
     animation-delay:2s;
 }
 
 .b4{
-    background:#f76f9e;
-    right:16%;
-    bottom:13%;
+    background:#f35f91;
+    right:15%;
+    bottom:12%;
     animation-delay:1.5s;
 }
 
 @keyframes balloonFloat{
-    0%,100%{transform:translateY(0) rotate(-5deg)}
-    50%{transform:translateY(-25px) rotate(5deg)}
+
+    0%,100%{
+        transform:translateY(0) rotate(-5deg);
+    }
+
+    50%{
+        transform:translateY(-25px) rotate(5deg);
+    }
+
 }
 
-/* ---------------- COMMON ---------------- */
+
+/* =====================================================
+   COMMON SECTIONS
+===================================================== */
 
 section{
+
     position:relative;
+
     z-index:1;
+
     padding:100px 20px;
 }
 
 .container{
+
     max-width:1100px;
+
     margin:auto;
 }
 
 .section-title{
+
     text-align:center;
+
     font-size:clamp(32px,5vw,52px);
+
     color:#c92d65;
+
     margin-bottom:15px;
 }
 
 .section-subtitle{
+
     text-align:center;
+
     font-size:17px;
+
     margin-bottom:50px;
+
+    line-height:1.8;
 }
 
-/* ---------------- COUNTDOWN ---------------- */
+
+/* =====================================================
+   AGE COUNTER
+===================================================== */
 
 .countdown-section{
+
     background:#fff7fa;
 }
 
 .countdown-box{
-    background:white;
-    border-radius:35px;
-    padding:50px 30px;
-    box-shadow:0 25px 70px rgba(180,70,110,.15);
+
+    background:rgba(255,255,255,.95);
+
+    border-radius:40px;
+
+    padding:55px 30px;
+
     text-align:center;
-    animation:cardFloat 5s ease-in-out infinite;
+
+    box-shadow:
+        0 25px 70px rgba(190,60,110,.15);
+
+    animation:counterFloat 5s ease-in-out infinite;
 }
 
-@keyframes cardFloat{
-    0%,100%{transform:translateY(0)}
-    50%{transform:translateY(-8px)}
+@keyframes counterFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
 }
 
 .count-title{
-    font-size:clamp(28px,5vw,45px);
+
+    font-size:clamp(30px,5vw,48px);
+
     color:#d52f69;
-    margin-bottom:10px;
+
+    margin-bottom:12px;
 }
 
 .count-sub{
-    margin-bottom:35px;
+
+    margin-bottom:40px;
+
+    font-size:17px;
 }
 
 .countdown{
+
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
+
+    grid-template-columns:
+        repeat(6,1fr);
+
+    gap:15px;
 }
 
 .time-card{
-    background:linear-gradient(145deg,#fff,#ffe5ef);
-    padding:25px 10px;
-    border-radius:22px;
-    box-shadow:0 12px 30px rgba(210,47,105,.12);
-    transition:.3s;
+
+    padding:25px 8px;
+
+    border-radius:24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff,
+            #ffe5ef
+        );
+
+    box-shadow:
+        0 12px 30px rgba(210,47,105,.1);
+
+    transition:.4s;
+
+    animation:timeCard 3s ease-in-out infinite;
+}
+
+.time-card:nth-child(2){
+    animation-delay:.2s;
+}
+
+.time-card:nth-child(3){
+    animation-delay:.4s;
+}
+
+.time-card:nth-child(4){
+    animation-delay:.6s;
+}
+
+.time-card:nth-child(5){
+    animation-delay:.8s;
+}
+
+.time-card:nth-child(6){
+    animation-delay:1s;
+}
+
+@keyframes timeCard{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-5px);
+    }
+
 }
 
 .time-card:hover{
-    transform:translateY(-8px) rotate(-2deg);
+
+    transform:
+        translateY(-10px)
+        rotate(-2deg)
+        scale(1.04);
+
 }
 
 .time-number{
-    font-size:40px;
+
+    font-size:42px;
+
     font-weight:800;
-    color:#dc326d;
+
+    color:#dd326d;
 }
 
 .time-label{
-    font-size:13px;
-    color:#936477;
+
+    font-size:12px;
+
+    letter-spacing:1px;
+
+    color:#95657a;
+
+    margin-top:5px;
 }
 
-.birthday-message{
+.age-note{
+
+    margin-top:35px;
+
+    font-size:16px;
+
+    color:#82586c;
+}
+
+
+/* =====================================================
+   BIRTHDAY MODE
+===================================================== */
+
+.birthday-mode{
+
     display:none;
+
     animation:birthdayPop 1s ease;
 }
 
 @keyframes birthdayPop{
-    0%{transform:scale(.3);opacity:0}
-    70%{transform:scale(1.1)}
-    100%{transform:scale(1);opacity:1}
+
+    0%{
+        opacity:0;
+        transform:scale(.4);
+    }
+
+    70%{
+        transform:scale(1.08);
+    }
+
+    100%{
+        opacity:1;
+        transform:scale(1);
+    }
+
 }
 
-.birthday-message h2{
+.birthday-mode h2{
+
     font-family:'Pacifico',cursive;
-    font-size:clamp(40px,8vw,75px);
-    color:#ef3d78;
+
+    font-size:clamp(42px,8vw,75px);
+
+    color:#ed3977;
 }
 
-.birthday-message p{
+.birthday-mode p{
+
     font-size:20px;
+
     margin-top:15px;
 }
 
-/* ---------------- FIGHTS ---------------- */
+
+/* =====================================================
+   FIGHTS SECTION
+===================================================== */
 
 .fight-section{
+
     background:
-        linear-gradient(135deg,#fff0f5,#ffe1ec);
+        linear-gradient(
+            135deg,
+            #ffeef5,
+            #ffe0eb
+        );
 }
 
 .fight-card{
+
     max-width:900px;
+
     margin:auto;
+
     background:white;
-    border-radius:35px;
+
+    border-radius:40px;
+
     padding:55px 35px;
+
     text-align:center;
-    box-shadow:0 25px 70px rgba(180,70,110,.16);
+
     position:relative;
+
     overflow:hidden;
+
+    box-shadow:
+        0 25px 70px rgba(180,70,110,.15);
+
+    animation:fightFloat 5s ease-in-out infinite;
+}
+
+@keyframes fightFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-7px);
+    }
+
 }
 
 .fight-card:before{
+
     content:"🥊";
+
     position:absolute;
-    font-size:130px;
-    opacity:.06;
+
+    font-size:140px;
+
+    opacity:.05;
+
     left:-20px;
+
     top:-20px;
+
 }
 
 .fight-card:after{
+
     content:"😂";
+
     position:absolute;
-    font-size:130px;
-    opacity:.06;
+
+    font-size:140px;
+
+    opacity:.05;
+
     right:-20px;
-    bottom:-20px;
+
+    bottom:-25px;
+
 }
 
-.fight-number{
-    font-size:80px;
-    font-weight:800;
-    color:#e3316d;
-    animation:fightNumber 1.5s ease infinite alternate;
+.fight-icon{
+
+    font-size:70px;
+
+    animation:boxing 1.2s infinite;
 }
 
-@keyframes fightNumber{
-    from{transform:rotate(-2deg)}
-    to{transform:rotate(2deg) scale(1.03)}
+@keyframes boxing{
+
+    0%,100%{
+        transform:rotate(0);
+    }
+
+    25%{
+        transform:rotate(-10deg);
+    }
+
+    75%{
+        transform:rotate(10deg);
+    }
+
 }
 
 .fight-card h3{
-    font-size:30px;
-    margin-bottom:20px;
+
+    font-size:32px;
+
+    color:#d52f69;
+
+    margin:15px 0 20px;
 }
 
 .fight-text{
+
     font-size:18px;
-    line-height:1.9;
+
+    line-height:2;
 }
 
-.fight-lines{
+.fight-pills{
+
     margin-top:30px;
+
     display:flex;
+
     flex-wrap:wrap;
+
     justify-content:center;
+
     gap:12px;
 }
 
 .fight-pill{
-    background:#ffe4ee;
+
     padding:12px 18px;
-    border-radius:30px;
+
+    background:#ffe3ed;
+
+    border-radius:40px;
+
     transition:.3s;
 }
 
 .fight-pill:hover{
-    background:#ffbed5;
-    transform:rotate(-3deg) scale(1.05);
+
+    transform:
+        scale(1.08)
+        rotate(-3deg);
+
+    background:#ffc5d9;
 }
 
-/* ---------------- PHOTOS ---------------- */
+.formula{
+
+    margin-top:35px;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    color:#c92d65;
+}
+
+
+/* =====================================================
+   PHOTOS
+===================================================== */
 
 .photos-section{
+
     background:#fff;
 }
 
 .photo-grid{
+
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:30px;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:35px;
+
 }
 
 .photo-card{
-    background:white;
-    padding:14px 14px 22px;
+
+    background:#fff;
+
+    padding:14px 14px 20px;
+
     border-radius:12px;
-    box-shadow:0 15px 35px rgba(100,40,70,.15);
-    transition:.5s;
+
+    box-shadow:
+        0 15px 40px rgba(90,35,65,.15);
+
     opacity:0;
-    transform:translateY(50px) rotate(var(--rotation));
+
+    transform:
+        translateY(60px)
+        rotate(var(--rotation));
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
 }
 
 .photo-card.show{
+
     opacity:1;
-    transform:translateY(0) rotate(var(--rotation));
+
+    transform:
+        translateY(0)
+        rotate(var(--rotation));
+
 }
 
-.photo-card:nth-child(1){--rotation:-3deg}
-.photo-card:nth-child(2){--rotation:2deg}
-.photo-card:nth-child(3){--rotation:-2deg}
-.photo-card:nth-child(4){--rotation:3deg}
-.photo-card:nth-child(5){--rotation:-2deg}
-.photo-card:nth-child(6){--rotation:2deg}
-
 .photo-card:hover{
-    transform:translateY(-15px) rotate(0deg) scale(1.04);
-    z-index:3;
+
+    transform:
+        translateY(-15px)
+        rotate(0deg)
+        scale(1.04);
+
+    z-index:5;
 }
 
 .photo-card img{
+
     width:100%;
+
     height:300px;
+
     object-fit:cover;
+
     border-radius:8px;
+
     display:block;
+
 }
 
 .photo-card p{
+
     text-align:center;
+
     padding-top:17px;
+
     font-size:15px;
 }
 
-/* ---------------- MESSAGE ---------------- */
+.photo-card:nth-child(1){
+    --rotation:-3deg;
+}
+
+.photo-card:nth-child(2){
+    --rotation:2deg;
+}
+
+.photo-card:nth-child(3){
+    --rotation:-2deg;
+}
+
+.photo-card:nth-child(4){
+    --rotation:3deg;
+}
+
+.photo-card:nth-child(5){
+    --rotation:-2deg;
+}
+
+.photo-card:nth-child(6){
+    --rotation:2deg;
+}
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
 
 .message-section{
-    background:linear-gradient(135deg,#ffe7f0,#fff5f9);
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            #ffd8e8,
+            transparent 35%
+        ),
+        #fff1f6;
 }
 
 .envelope{
-    width:min(650px,95%);
+
+    max-width:700px;
+
     margin:auto;
+
     cursor:pointer;
-    perspective:1000px;
+
+    transition:.4s;
+}
+
+.envelope:hover{
+
+    transform:translateY(-5px);
 }
 
 .envelope-top{
+
     background:#d93670;
+
     color:white;
+
     padding:22px;
+
     text-align:center;
-    border-radius:25px 25px 0 0;
-    font-size:22px;
-    box-shadow:0 15px 35px rgba(190,45,100,.2);
+
+    border-radius:
+        28px 28px 0 0;
+
+    font-size:21px;
+
+    box-shadow:
+        0 12px 30px rgba(190,45,100,.2);
 }
 
 .envelope-body{
+
     background:white;
-    min-height:120px;
-    border-radius:0 0 25px 25px;
+
+    min-height:140px;
+
+    padding:35px;
+
+    border-radius:
+        0 0 28px 28px;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
-    padding:30px;
-    font-size:18px;
+
+    text-align:center;
+
+    box-shadow:
+        0 20px 45px rgba(190,45,100,.12);
+
     transition:.8s;
-    box-shadow:0 20px 40px rgba(190,45,100,.12);
 }
 
-.envelope-body p{
-    transition:.8s;
+.open-text{
+
+    font-size:18px;
+
+    color:#8b5d72;
+
+    animation:messageHint 1.8s infinite;
+}
+
+@keyframes messageHint{
+
+    0%,100%{
+        opacity:.6;
+    }
+
+    50%{
+        opacity:1;
+    }
+
 }
 
 .message-content{
+
     display:none;
+
     text-align:left;
+
     line-height:2;
+
     animation:letterOpen 1s ease;
 }
 
 @keyframes letterOpen{
+
     from{
         opacity:0;
-        transform:translateY(30px);
+        transform:
+            translateY(30px);
     }
+
     to{
         opacity:1;
-        transform:translateY(0);
+        transform:
+            translateY(0);
     }
+
 }
 
 .envelope.open .envelope-body{
-    min-height:400px;
+
+    min-height:550px;
+
     align-items:flex-start;
+
 }
 
 .envelope.open .open-text{
+
     display:none;
 }
 
 .envelope.open .message-content{
+
     display:block;
 }
 
-/* ---------------- GIFT ---------------- */
+.message-content p{
 
-.gift-section{
+    margin-bottom:18px;
+}
+
+
+/* =====================================================
+   THANK YOU
+===================================================== */
+
+.thankyou-section{
+
+    min-height:80vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
     text-align:center;
-    background:#fff;
-}
 
-.gift{
-    width:150px;
-    height:120px;
-    margin:50px auto 20px;
+    padding:100px 20px;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            #ffd5e6,
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            #ffe4ef,
+            transparent 35%
+        ),
+        #fff7fa;
+
     position:relative;
-    cursor:pointer;
-    animation:giftBounce 2s infinite;
+
+    overflow:hidden;
 }
 
-@keyframes giftBounce{
-    0%,100%{transform:translateY(0)}
-    50%{transform:translateY(-15px)}
-}
+.thankyou-card{
 
-.gift-box{
-    position:absolute;
-    bottom:0;
-    width:150px;
-    height:95px;
-    background:#ed4d82;
-    border-radius:8px;
-}
+    max-width:720px;
 
-.gift-lid{
-    position:absolute;
-    top:10px;
-    left:-8px;
-    width:166px;
-    height:30px;
-    background:#d93670;
-    border-radius:7px;
-    z-index:3;
-    transition:.8s;
-}
+    width:100%;
 
-.gift-ribbon{
-    position:absolute;
-    left:63px;
-    width:25px;
-    height:120px;
-    background:#ffd1df;
+    padding:65px 45px;
+
+    background:
+        rgba(255,255,255,.94);
+
+    border-radius:42px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(200,50,110,.16);
+
+    animation:thankFloat 4s ease-in-out infinite;
+
+    position:relative;
+
     z-index:2;
 }
 
-.gift.open .gift-lid{
-    transform:translateY(-65px) rotate(-10deg);
+@keyframes thankFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
 }
 
-.gift-note{
-    display:none;
-    margin:25px auto;
-    max-width:600px;
-    padding:30px;
-    background:#fff0f6;
-    border-radius:25px;
-    animation:notePop .8s ease;
-}
+.thankyou-heart{
 
-@keyframes notePop{
-    from{opacity:0;transform:scale(.5)}
-    to{opacity:1;transform:scale(1)}
-}
+    font-size:80px;
 
-.gift-note.show{
-    display:block;
-}
+    animation:heartBeat 1.4s infinite;
 
-.gift-note h3{
-    color:#d93670;
-    font-size:30px;
-    margin-bottom:10px;
-}
-
-/* ---------------- FINAL ---------------- */
-
-.final-section{
-    min-height:70vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    background:
-        radial-gradient(circle at center,#ffd9e8,#fff0f6 60%);
-}
-
-.final-heart{
-    font-size:100px;
-    animation:heartBeat 1.2s infinite;
 }
 
 @keyframes heartBeat{
-    0%,100%{transform:scale(1)}
-    15%{transform:scale(1.2)}
-    30%{transform:scale(1)}
-    45%{transform:scale(1.15)}
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    15%{
+        transform:scale(1.2);
+    }
+
+    30%{
+        transform:scale(1);
+    }
+
+    45%{
+        transform:scale(1.12);
+    }
+
 }
 
-.final-section h2{
+.thankyou-card h2{
+
     font-family:'Pacifico',cursive;
-    color:#d93670;
-    font-size:clamp(40px,7vw,70px);
+
+    font-size:
+        clamp(45px,7vw,70px);
+
+    color:#d52f69;
+
+    margin:10px 0 25px;
 }
 
-.final-section p{
-    margin-top:20px;
-    font-size:18px;
+.thankyou-card p{
+
+    font-size:19px;
+
+    line-height:2;
+
 }
 
-/* ---------------- CONFETTI ---------------- */
+.one-year{
+
+    display:inline-block;
+
+    margin:30px 0;
+
+    padding:14px 28px;
+
+    background:#ffe1ec;
+
+    color:#d52f69;
+
+    border-radius:40px;
+
+    font-weight:700;
+
+    font-size:20px;
+
+    animation:yearGlow 2s infinite;
+}
+
+@keyframes yearGlow{
+
+    0%,100%{
+        transform:scale(1);
+        box-shadow:none;
+    }
+
+    50%{
+        transform:scale(1.05);
+        box-shadow:
+            0 12px 30px
+            rgba(213,47,105,.18);
+    }
+
+}
+
+.small-thanks{
+
+    font-size:16px !important;
+
+    opacity:.85;
+}
+
+
+/* =====================================================
+   CONFETTI
+===================================================== */
 
 .confetti{
+
     position:fixed;
+
     width:9px;
+
     height:15px;
+
     top:-20px;
+
     z-index:100;
+
     pointer-events:none;
-    animation:confettiFall linear forwards;
+
+    animation:
+        confettiFall
+        linear
+        forwards;
 }
 
 @keyframes confettiFall{
+
     to{
-        transform:translateY(110vh) rotate(720deg);
+
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
         opacity:0;
     }
+
 }
 
-/* ---------------- RESPONSIVE ---------------- */
 
-@media(max-width:800px){
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:900px){
 
     .countdown{
-        grid-template-columns:repeat(2,1fr);
+
+        grid-template-columns:
+            repeat(3,1fr);
     }
 
     .photo-grid{
-        grid-template-columns:repeat(2,1fr);
+
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
-    .photo-card img{
-        height:240px;
-    }
-
-    .balloon{
-        transform:scale(.7);
-    }
 }
 
-@media(max-width:520px){
+@media(max-width:600px){
 
     section{
-        padding:70px 15px;
+
+        padding:
+            70px 15px;
     }
 
     .hero h1{
+
         font-size:55px;
     }
 
     .hero-sub{
+
         font-size:16px;
     }
 
-    .countdown-box{
-        padding:35px 15px;
+    .countdown{
+
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
     .time-number{
-        font-size:32px;
+
+        font-size:34px;
     }
 
     .photo-grid{
+
         grid-template-columns:1fr;
     }
 
     .photo-card img{
+
         height:330px;
     }
 
     .fight-card{
-        padding:40px 20px;
+
+        padding:
+            45px 20px;
     }
 
-    .fight-number{
-        font-size:65px;
+    .fight-card h3{
+
+        font-size:26px;
     }
+
+    .fight-text{
+
+        font-size:16px;
+    }
+
+    .envelope-body{
+
+        padding:25px 20px;
+    }
+
+    .thankyou-card{
+
+        padding:
+            50px 25px;
+    }
+
 }
+
+
+/* =====================================================
+   REDUCE MOTION
+===================================================== */
+
+@media(prefers-reduced-motion:reduce){
+
+    *{
+
+        animation-duration:.01ms !important;
+
+        animation-iteration-count:1 !important;
+
+        transition-duration:.01ms !important;
+    }
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
-<!-- FLOATING HEARTS -->
-<div class="bg-heart" style="left:5%;animation-duration:10s;">❤️</div>
-<div class="bg-heart" style="left:15%;animation-duration:13s;animation-delay:2s;">💗</div>
-<div class="bg-heart" style="left:30%;animation-duration:9s;animation-delay:4s;">💕</div>
-<div class="bg-heart" style="left:48%;animation-duration:12s;animation-delay:1s;">❤️</div>
-<div class="bg-heart" style="left:65%;animation-duration:10s;animation-delay:3s;">💖</div>
-<div class="bg-heart" style="left:80%;animation-duration:14s;">💗</div>
-<div class="bg-heart" style="left:92%;animation-duration:11s;animation-delay:5s;">❤️</div>
+
+<!-- =====================================================
+     FLOATING HEARTS
+===================================================== -->
+
+<div class="bg-heart"
+style="left:5%;font-size:25px;animation-duration:11s;">
+❤️
+</div>
+
+<div class="bg-heart"
+style="left:15%;font-size:20px;animation-duration:14s;animation-delay:2s;">
+💗
+</div>
+
+<div class="bg-heart"
+style="left:30%;font-size:28px;animation-duration:10s;animation-delay:4s;">
+💕
+</div>
+
+<div class="bg-heart"
+style="left:48%;font-size:22px;animation-duration:13s;animation-delay:1s;">
+❤️
+</div>
+
+<div class="bg-heart"
+style="left:65%;font-size:26px;animation-duration:11s;animation-delay:3s;">
+💖
+</div>
+
+<div class="bg-heart"
+style="left:80%;font-size:20px;animation-duration:15s;">
+💗
+</div>
+
+<div class="bg-heart"
+style="left:92%;font-size:27px;animation-duration:12s;animation-delay:5s;">
+❤️
+</div>
 
 
-<!-- HERO -->
+<!-- =====================================================
+     HERO
+===================================================== -->
+
 <section class="hero">
 
     <div class="balloon b1"></div>
@@ -717,16 +1309,29 @@ section{
         </div>
 
         <h1>
-            Happy Birthday<br>
+
+            Happy Birthday
+
+            <br>
+
             <span>Rohith ❤️</span>
+
         </h1>
 
         <p class="hero-sub">
-            To the person who somehow survived <b>1 whole year</b> of our friendship 😂
+
+            To the person who somehow survived
+            <b>one whole year</b>
+            of our friendship 😂❤️
+
         </p>
 
-        <a href="#countdown" class="scroll-btn">
-            🎁 Open Your Surprise
+        <a
+            href="#countdown"
+            class="scroll-btn">
+
+            💗 Start the Journey
+
         </a>
 
     </div>
@@ -734,61 +1339,186 @@ section{
 </section>
 
 
-<!-- COUNTDOWN -->
-<section class="countdown-section" id="countdown">
+<!-- =====================================================
+     AGE COUNTER
+===================================================== -->
+
+<section
+    class="countdown-section"
+    id="countdown">
 
 <div class="container">
 
     <div class="countdown-box">
 
-        <div id="countdownArea">
+        <div id="ageCounter">
 
             <h2 class="count-title">
-                🎂 Birthday Countdown 🎂
+
+                🎂 Rohith's Life So Far 🎂
+
             </h2>
 
             <p class="count-sub">
-                Counting down to Rohith's 19th birthday ❤️
+
+                From the day you were born
+                until this very second ❤️
+
             </p>
+
 
             <div class="countdown">
 
-                <div class="time-card">
-                    <div class="time-number" id="days">0</div>
-                    <div class="time-label">DAYS</div>
-                </div>
 
                 <div class="time-card">
-                    <div class="time-number" id="hours">0</div>
-                    <div class="time-label">HOURS</div>
+
+                    <div
+                        class="time-number"
+                        id="years">
+
+                        0
+
+                    </div>
+
+                    <div class="time-label">
+
+                        YEARS
+
+                    </div>
+
                 </div>
 
-                <div class="time-card">
-                    <div class="time-number" id="minutes">0</div>
-                    <div class="time-label">MINUTES</div>
-                </div>
 
                 <div class="time-card">
-                    <div class="time-number" id="seconds">0</div>
-                    <div class="time-label">SECONDS</div>
+
+                    <div
+                        class="time-number"
+                        id="months">
+
+                        0
+
+                    </div>
+
+                    <div class="time-label">
+
+                        MONTHS
+
+                    </div>
+
                 </div>
+
+
+                <div class="time-card">
+
+                    <div
+                        class="time-number"
+                        id="days">
+
+                        0
+
+                    </div>
+
+                    <div class="time-label">
+
+                        DAYS
+
+                    </div>
+
+                </div>
+
+
+                <div class="time-card">
+
+                    <div
+                        class="time-number"
+                        id="hours">
+
+                        0
+
+                    </div>
+
+                    <div class="time-label">
+
+                        HOURS
+
+                    </div>
+
+                </div>
+
+
+                <div class="time-card">
+
+                    <div
+                        class="time-number"
+                        id="minutes">
+
+                        0
+
+                    </div>
+
+                    <div class="time-label">
+
+                        MINUTES
+
+                    </div>
+
+                </div>
+
+
+                <div class="time-card">
+
+                    <div
+                        class="time-number"
+                        id="seconds">
+
+                        0
+
+                    </div>
+
+                    <div class="time-label">
+
+                        SECONDS
+
+                    </div>
+
+                </div>
+
 
             </div>
+
+
+            <p class="age-note">
+
+                ✨ And every second keeps adding
+                to your story... ✨
+
+            </p>
 
         </div>
 
 
-        <div class="birthday-message" id="birthdayMessage">
+        <!-- BIRTHDAY MESSAGE -->
 
-            <h2>🎉 HE IS 19!!! 🎉</h2>
+        <div
+            class="birthday-mode"
+            id="birthdayMessage">
+
+            <h2>
+
+                🎉 HE IS 19!!! 🎉
+
+            </h2>
 
             <p>
+
                 Happy 19th Birthday, Rohith! ❤️
+
             </p>
 
             <p>
-                Today isn't just another day...
-                it's officially your day! 🥳
+
+                Today is officially your day! 🥳
+
             </p>
 
         </div>
@@ -800,63 +1530,111 @@ section{
 </section>
 
 
-<!-- FIGHTS -->
+<!-- =====================================================
+     FIGHTS
+===================================================== -->
+
 <section class="fight-section">
 
 <div class="container">
 
     <h2 class="section-title">
-        🥊 Us in One Section
+
+        🥊 One Year...
+        Too Many Fights 😂
+
     </h2>
 
     <p class="section-subtitle">
-        Because apparently friendship without fighting is impossible 😂
+
+        Because apparently we decided
+        friendship needed a little drama. 😭😂
+
     </p>
+
 
     <div class="fight-card">
 
-        <div class="fight-number">
-            1 YEAR
+        <div class="fight-icon">
+            🥊
         </div>
 
         <h3>
-            ...and WAY TOO MANY FIGHTS 😂
+
+            We Fight. We Get Angry.
+            We Come Back. ❤️
+
         </h3>
+
 
         <p class="fight-text">
 
-            We've had arguments.<br>
-            We've annoyed each other.<br>
-            We've misunderstood each other.<br>
-            We've probably thought "I'm never talking to you again." 😭😂
+            We've had arguments.
+
+            <br>
+
+            We've annoyed each other.
+
+            <br>
+
+            We've misunderstood each other.
+
+            <br>
+
+            We've probably said
+            <b>"I'm never talking to you again."</b> 😭
 
             <br><br>
 
-            But somehow...
+            And then somehow...
 
-            <br>
+            <br><br>
 
-            <b>we're still here. ❤️</b>
+            <b>
+                we're talking again. 😂❤️
+            </b>
 
         </p>
 
-        <div class="fight-lines">
 
-            <div class="fight-pill">🥊 Fight</div>
-            <div class="fight-pill">😤 Get Angry</div>
-            <div class="fight-pill">🙄 Ignore</div>
-            <div class="fight-pill">😂 Start Talking</div>
-            <div class="fight-pill">❤️ Repeat</div>
+        <div class="fight-pills">
+
+            <div class="fight-pill">
+                😤 Get Angry
+            </div>
+
+            <div class="fight-pill">
+                🥊 Fight
+            </div>
+
+            <div class="fight-pill">
+                🙄 Ignore
+            </div>
+
+            <div class="fight-pill">
+                😭 Miss Each Other
+            </div>
+
+            <div class="fight-pill">
+                😂 Start Talking
+            </div>
+
+            <div class="fight-pill">
+                ❤️ Forgive
+            </div>
 
         </div>
 
-        <p style="margin-top:30px;font-weight:600;">
-            Our friendship formula:
-            <br>
-            <span style="font-size:22px;">
-                Fight → Ignore → Laugh → Forgive → Repeat 🔁
-            </span>
-        </p>
+
+        <div class="formula">
+
+            Fight →
+            Ignore →
+            Laugh →
+            Forgive →
+            Repeat 🔁
+
+        </div>
 
     </div>
 
@@ -865,50 +1643,108 @@ section{
 </section>
 
 
-<!-- SIX PHOTOS -->
+<!-- =====================================================
+     SIX PHOTOS
+===================================================== -->
+
 <section class="photos-section">
 
 <div class="container">
 
     <h2 class="section-title">
+
         📸 A Few Moments
+
     </h2>
 
     <p class="section-subtitle">
-        Six little pieces of memories I wanted to keep here. ❤️
+
+        Six little moments
+        that deserve a place here. ❤️
+
     </p>
+
 
     <div class="photo-grid">
 
-        <div class="photo-card">
-            <img src="1.jpg" alt="Rohith photo 1">
-            <p>✨ One of my favourite moments</p>
-        </div>
 
         <div class="photo-card">
-            <img src="2.jpg" alt="Rohith photo 2">
-            <p>😂 One of those unforgettable moments</p>
+
+            <img
+                src="1.jpg"
+                alt="Rohith photo 1">
+
+            <p>
+                ✨ One of my favourite moments
+            </p>
+
         </div>
 
-        <div class="photo-card">
-            <img src="3.jpg" alt="Rohith photo 3">
-            <p>❤️ A moment worth keeping</p>
-        </div>
 
         <div class="photo-card">
-            <img src="4.jpg" alt="Rohith photo 4">
-            <p>🥹 A memory I'll always remember</p>
+
+            <img
+                src="2.jpg"
+                alt="Rohith photo 2">
+
+            <p>
+                😂 One of those unforgettable moments
+            </p>
+
         </div>
 
-        <div class="photo-card">
-            <img src="5.jpg" alt="Rohith photo 5">
-            <p>😂 More chaos, more memories</p>
-        </div>
 
         <div class="photo-card">
-            <img src="6.jpg" alt="Rohith photo 6">
-            <p>💗 Just one more memory</p>
+
+            <img
+                src="3.jpg"
+                alt="Rohith photo 3">
+
+            <p>
+                ❤️ A moment worth keeping
+            </p>
+
         </div>
+
+
+        <div class="photo-card">
+
+            <img
+                src="4.jpg"
+                alt="Rohith photo 4">
+
+            <p>
+                🥹 A memory I'll always remember
+            </p>
+
+        </div>
+
+
+        <div class="photo-card">
+
+            <img
+                src="5.jpg"
+                alt="Rohith photo 5">
+
+            <p>
+                😂 More chaos, more memories
+            </p>
+
+        </div>
+
+
+        <div class="photo-card">
+
+            <img
+                src="6.jpg"
+                alt="Rohith photo 6">
+
+            <p>
+                💗 Just one more memory
+            </p>
+
+        </div>
+
 
     </div>
 
@@ -917,101 +1753,210 @@ section{
 </section>
 
 
-<!-- MESSAGE -->
+<!-- =====================================================
+     LETTER
+===================================================== -->
+
 <section class="message-section">
 
 <div class="container">
 
     <h2 class="section-title">
+
         💌 A Little Message For You
+
     </h2>
 
     <p class="section-subtitle">
-        Don't worry... this one doesn't start with a fight 😂
+
+        This time... no fighting. 😂
+        Just read this one.
+
     </p>
 
 
-    <div class="envelope" id="envelope">
+    <div
+        class="envelope"
+        id="envelope">
+
 
         <div class="envelope-top">
+
             💌 Click to Open
+
         </div>
+
 
         <div class="envelope-body">
 
+
             <div class="open-text">
-                Tap here... I actually wrote something 🥹❤️
+
+                👆 Click here...
+                there's something for you 🥹❤️
+
             </div>
 
+
             <div class="message-content">
+
 
                 <p>
                     Dear Rohith,
                 </p>
 
+
                 <p>
                     One year.
                 </p>
 
-                <p>
-                    It sounds like such a small amount of time,
-                    but somehow within this one year we've managed
-                    to create so many memories.
-                </p>
 
                 <p>
+
+                    One year might sound like
+                    a small amount of time,
+                    but somehow we've managed
+                    to create so many memories
+                    in it.
+
+                </p>
+
+
+                <p>
+
                     We've laughed.
+
+                    <br>
+
                     We've annoyed each other.
+
+                    <br>
+
                     We've had A LOT of fights. 😂
+
                 </p>
 
-                <p>
-                    There were times when we probably wondered
-                    why we even became friends in the first place. 😭
-                </p>
 
                 <p>
+
+                    There were definitely moments
+                    when we probably wondered
+                    why we even became friends
+                    in the first place. 😭😂
+
+                </p>
+
+
+                <p>
+
                     But after every fight,
-                    somehow we ended up talking again.
+                    somehow we ended up
+                    talking again.
+
                 </p>
 
+
                 <p>
+
                     And honestly...
-                    I think that's what makes our friendship special.
+
+                    <br>
+
+                    I think that's what makes
+                    our friendship special.
+
                 </p>
 
+
                 <p>
+
                     It isn't perfect.
+
+                    <br>
+
                     We aren't perfect.
-                    We fight, we get angry, we annoy each other...
-                    but we still care.
+
+                    <br>
+
+                    We fight, get angry,
+                    annoy each other
+                    and sometimes don't talk.
+
                 </p>
 
+
                 <p>
+
+                    But somehow,
+                    we still care.
+
+                    ❤️
+
+                </p>
+
+
+                <p>
+
                     So on your 19th birthday,
-                    I just want to say:
+                    I just want to say...
+
                 </p>
 
-                <p style="font-weight:700;color:#d52f69;font-size:21px;">
-                    Thank you for being a part of this crazy
+
+                <p
+                    style="
+                    font-weight:700;
+                    color:#d52f69;
+                    font-size:21px;">
+
+                    Thank you for being
+                    a part of this crazy
                     one-year journey. ❤️
+
                 </p>
 
+
                 <p>
+
                     Here's to more laughs,
+
+                    <br>
+
                     more memories,
+
+                    <br>
+
                     more stupid arguments,
+
+                    <br>
+
                     and unfortunately...
+
+                    <br>
+
                     probably more fights. 😂
+
                 </p>
+
 
                 <p>
-                    Happy 19th Birthday, Rohith! 🎂❤️
+
+                    Happy 19th Birthday,
+                    Rohith! 🎂❤️
+
                 </p>
 
-                <p style="text-align:right;">
-                    — From someone who still hasn't blocked you 😂❤️
+
+                <p
+                    style="
+                    text-align:right;
+                    font-weight:600;">
+
+                    — From someone
+                    who still hasn't blocked you 😂❤️
+
                 </p>
+
 
             </div>
 
@@ -1024,246 +1969,436 @@ section{
 </section>
 
 
-<!-- GIFT -->
-<section class="gift-section">
+<!-- =====================================================
+     THANK YOU
+===================================================== -->
 
-<div class="container">
+<section class="thankyou-section">
 
-    <h2 class="section-title">
-        🎁 One Last Thing...
-    </h2>
+    <div class="thankyou-card">
 
-    <p class="section-subtitle">
-        You found the gift. Now open it 👀
-    </p>
 
-    <div class="gift" id="gift">
+        <div class="thankyou-heart">
 
-        <div class="gift-lid"></div>
+            ❤️
 
-        <div class="gift-box"></div>
+        </div>
 
-        <div class="gift-ribbon"></div>
 
-    </div>
+        <h2>
 
-    <p>
-        👆 Click the gift
-    </p>
+            Thank You
 
-    <div class="gift-note" id="giftNote">
+        </h2>
 
-        <h3>
-            🎉 SURPRISE!
-        </h3>
 
         <p>
-            Congratulations!
-            You have successfully completed
-            one year of friendship with me. 😂❤️
+
+            Thank you for being
+            a part of my life
+            and for being there
+            with me for this
+
+            <br>
+
+            <b>one beautiful year.</b>
+
+            🥹❤️
+
         </p>
 
-        <p style="margin-top:15px;">
-            Your reward:
-            <b>another year of putting up with me. 😌</b>
+
+        <div class="one-year">
+
+            ✨ 1 Year of Us ✨
+
+        </div>
+
+
+        <p class="small-thanks">
+
+            Through the laughs,
+            the fights,
+            the arguments
+            and everything in between...
+
+            <br><br>
+
+            I'm really glad
+            you were there. ❤️
+
         </p>
 
+
     </div>
-
-</div>
-
-</section>
-
-
-<!-- FINAL -->
-<section class="final-section">
-
-<div>
-
-    <div class="final-heart">
-        ❤️
-    </div>
-
-    <h2>
-        Happy Birthday, Rohith!
-    </h2>
-
-    <p>
-        19 looks good on you. 😌✨
-    </p>
-
-    <p>
-        Now go enjoy your day! 🎂🎉
-    </p>
-
-</div>
 
 </section>
 
 
 <script>
 
-/* ---------------- COUNTDOWN ---------------- */
 
-const birthday = new Date("2026-09-15T00:00:00");
+/* =====================================================
+   AGE COUNTER
+===================================================== */
 
-function updateCountdown(){
+/*
+   Birth date:
+   15 September 2007
+
+   Since exact birth time is unknown,
+   midnight is used.
+*/
+
+const birthDate =
+    new Date("2007-09-15T00:00:00");
+
+
+function updateAge(){
 
     const now = new Date();
 
-    const difference = birthday - now;
 
-    /* Birthday has arrived */
-    if(difference <= 0){
+    let years =
+        now.getFullYear()
+        - birthDate.getFullYear();
 
-        document.getElementById("countdownArea").style.display="none";
 
-        document.getElementById("birthdayMessage").style.display="block";
+    let months =
+        now.getMonth()
+        - birthDate.getMonth();
 
-        launchConfetti();
 
-        return;
+    let days =
+        now.getDate()
+        - birthDate.getDate();
+
+
+    let hours =
+        now.getHours()
+        - birthDate.getHours();
+
+
+    let minutes =
+        now.getMinutes()
+        - birthDate.getMinutes();
+
+
+    let seconds =
+        now.getSeconds()
+        - birthDate.getSeconds();
+
+
+    /* Seconds */
+
+    if(seconds < 0){
+
+        seconds += 60;
+
+        minutes--;
+
     }
 
-    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
 
-    const hours = Math.floor(
-        (difference / (1000 * 60 * 60)) % 24
-    );
+    /* Minutes */
 
-    const minutes = Math.floor(
-        (difference / (1000 * 60)) % 60
-    );
+    if(minutes < 0){
 
-    const seconds = Math.floor(
-        (difference / 1000) % 60
-    );
+        minutes += 60;
 
-    document.getElementById("days").textContent = days;
-    document.getElementById("hours").textContent = hours;
-    document.getElementById("minutes").textContent = minutes;
-    document.getElementById("seconds").textContent = seconds;
+        hours--;
+
+    }
+
+
+    /* Hours */
+
+    if(hours < 0){
+
+        hours += 24;
+
+        days--;
+
+    }
+
+
+    /* Days */
+
+    if(days < 0){
+
+        const daysInPreviousMonth =
+            new Date(
+                now.getFullYear(),
+                now.getMonth(),
+                0
+            ).getDate();
+
+        days += daysInPreviousMonth;
+
+        months--;
+
+    }
+
+
+    /* Months */
+
+    if(months < 0){
+
+        months += 12;
+
+        years--;
+
+    }
+
+
+    document.getElementById("years")
+        .textContent = years;
+
+    document.getElementById("months")
+        .textContent = months;
+
+    document.getElementById("days")
+        .textContent = days;
+
+    document.getElementById("hours")
+        .textContent = hours;
+
+    document.getElementById("minutes")
+        .textContent = minutes;
+
+    document.getElementById("seconds")
+        .textContent = seconds;
+
+
 }
 
-updateCountdown();
 
-setInterval(updateCountdown,1000);
-
-
-/* ---------------- OPEN LETTER ---------------- */
-
-const envelope = document.getElementById("envelope");
-
-envelope.addEventListener("click",function(){
-
-    envelope.classList.toggle("open");
-
-});
+updateAge();
 
 
-/* ---------------- GIFT ---------------- */
-
-const gift = document.getElementById("gift");
-const giftNote = document.getElementById("giftNote");
-
-gift.addEventListener("click",function(){
-
-    gift.classList.toggle("open");
-
-    if(gift.classList.contains("open")){
-
-        giftNote.classList.add("show");
-
-        launchConfetti();
-
-    }
-
-});
-
-
-/* ---------------- PHOTO ANIMATION ---------------- */
-
-const photos = document.querySelectorAll(".photo-card");
-
-const photoObserver = new IntersectionObserver(
-
-    entries => {
-
-        entries.forEach(entry => {
-
-            if(entry.isIntersecting){
-
-                entry.target.classList.add("show");
-
-            }
-
-        });
-
-    },
-
-    {
-        threshold:.2
-    }
-
+setInterval(
+    updateAge,
+    1000
 );
 
-photos.forEach(photo => {
 
-    photoObserver.observe(photo);
+/* =====================================================
+   BIRTHDAY CELEBRATION
+===================================================== */
 
-});
+function checkBirthday(){
+
+    const now = new Date();
+
+    const month =
+        now.getMonth();
+
+    const day =
+        now.getDate();
 
 
-/* ---------------- CONFETTI ---------------- */
+    if(
+        month === 8 &&
+        day === 15
+    ){
+
+        document.getElementById(
+            "ageCounter"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "birthdayMessage"
+        ).style.display = "block";
+
+
+        setTimeout(
+            launchConfetti,
+            1000
+        );
+
+    }
+
+}
+
+
+checkBirthday();
+
+
+/* =====================================================
+   OPEN MESSAGE
+===================================================== */
+
+const envelope =
+    document.getElementById(
+        "envelope"
+    );
+
+
+envelope.addEventListener(
+    "click",
+    function(){
+
+        envelope.classList.toggle(
+            "open"
+        );
+
+    }
+);
+
+
+/* =====================================================
+   PHOTO ANIMATION
+===================================================== */
+
+const photos =
+    document.querySelectorAll(
+        ".photo-card"
+    );
+
+
+const photoObserver =
+    new IntersectionObserver(
+
+        function(entries){
+
+            entries.forEach(
+                function(entry){
+
+                    if(
+                        entry.isIntersecting
+                    ){
+
+                        entry.target
+                            .classList
+                            .add("show");
+
+                    }
+
+                }
+            );
+
+        },
+
+        {
+            threshold:.15
+        }
+
+    );
+
+
+photos.forEach(
+    function(photo){
+
+        photoObserver.observe(
+            photo
+        );
+
+    }
+);
+
+
+/* =====================================================
+   CONFETTI
+===================================================== */
 
 function launchConfetti(){
 
-    for(let i=0;i<80;i++){
+    for(
+        let i = 0;
+        i < 100;
+        i++
+    ){
 
-        const confetti = document.createElement("div");
+        const confetti =
+            document.createElement(
+                "div"
+            );
 
-        confetti.className="confetti";
+
+        confetti.className =
+            "confetti";
+
 
         confetti.style.left =
-            Math.random()*100+"vw";
+            Math.random() * 100
+            + "vw";
+
 
         confetti.style.animationDuration =
-            (Math.random()*3+2)+"s";
+            (
+                Math.random() * 3
+                + 2
+            ) + "s";
+
+
+        const colors = [
+
+            "#ff4f88",
+            "#ffd166",
+            "#ff8fab",
+            "#c77dff",
+            "#72ddf7"
+
+        ];
+
 
         confetti.style.background =
-            ["#ff4f88","#ffd166","#ff8fab","#c77dff","#72ddf7"]
-            [Math.floor(Math.random()*5)];
+            colors[
+                Math.floor(
+                    Math.random()
+                    * colors.length
+                )
+            ];
+
 
         confetti.style.transform =
-            "rotate("+Math.random()*360+"deg)";
+            "rotate("
+            + Math.random()*360
+            + "deg)";
 
-        document.body.appendChild(confetti);
 
-        setTimeout(() => {
+        document.body.appendChild(
+            confetti
+        );
 
-            confetti.remove();
 
-        },5000);
+        setTimeout(
+            function(){
+
+                confetti.remove();
+
+            },
+            5500
+        );
 
     }
 
 }
 
 
-/* ---------------- BIRTHDAY AUTO CONFETTI ---------------- */
+/* =====================================================
+   EXTRA BIRTHDAY CONFETTI
+===================================================== */
 
-const today = new Date();
+const today =
+    new Date();
+
 
 if(
     today.getMonth() === 8 &&
     today.getDate() === 15
 ){
 
-    setTimeout(launchConfetti,1500);
+    setTimeout(
+        launchConfetti,
+        2000
+    );
 
 }
 
 </script>
 
 </body>
+
 </html>
