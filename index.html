@@ -4,641 +4,687 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Happy Birthday Rohith ❤️</title>
+<title>Rohith's 19th Birthday ❤️</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Pacifico&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: linear-gradient(135deg, #fff0f6, #ffe4ec, #fce4ff);
-    color: #4a2940;
-    overflow-x: hidden;
+body{
+    font-family:'Poppins',sans-serif;
+    background:#fff0f6;
+    color:#54263f;
+    overflow-x:hidden;
 }
 
-/* ================= FLOATING HEARTS ================= */
+/* ---------------- BACKGROUND ---------------- */
 
-.hearts {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-    z-index: 0;
+.bg-heart{
+    position:fixed;
+    bottom:-50px;
+    font-size:25px;
+    opacity:.35;
+    animation:floatHeart linear infinite;
+    pointer-events:none;
+    z-index:0;
 }
 
-.heart {
-    position: absolute;
-    bottom: -60px;
-    animation: floatHeart linear infinite;
-    opacity: 0.6;
-}
-
-@keyframes floatHeart {
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0;
+@keyframes floatHeart{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
     }
-
-    15% {
-        opacity: 0.7;
+    15%{
+        opacity:.5;
     }
-
-    100% {
-        transform: translateY(-110vh) rotate(360deg);
-        opacity: 0;
+    100%{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
     }
 }
 
-/* ================= HERO ================= */
+/* ---------------- HERO ---------------- */
 
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 30px 20px;
-    position: relative;
-    z-index: 1;
+.hero{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px 20px;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 20% 20%,#ffd7e8 0%,transparent 30%),
+        radial-gradient(circle at 80% 30%,#ffe4ef 0%,transparent 30%),
+        linear-gradient(135deg,#fff0f6,#ffe4ee,#fff7fa);
 }
 
-.hero-box {
-    max-width: 900px;
-    width: 100%;
+.hero-content{
+    position:relative;
+    z-index:2;
+    animation:heroAppear 1.5s ease;
 }
 
-.small-text {
-    font-size: 20px;
-    margin-bottom: 15px;
-    animation: fadeDown 1s ease;
-}
-
-.hero h1 {
-    font-size: clamp(45px, 9vw, 90px);
-    color: #e83e72;
-    text-shadow: 0 5px 20px rgba(232, 62, 114, 0.25);
-    animation: heartbeat 2s infinite;
-}
-
-.hero h2 {
-    font-size: clamp(28px, 6vw, 48px);
-    color: #9c3b73;
-    margin-top: 10px;
-}
-
-.hero p {
-    font-size: 19px;
-    margin: 20px auto;
-    max-width: 680px;
-    line-height: 1.7;
-}
-
-.btn {
-    display: inline-block;
-    border: none;
-    padding: 14px 28px;
-    margin-top: 15px;
-    border-radius: 50px;
-    background: linear-gradient(135deg, #ff4f81, #c84bce);
-    color: white;
-    font-size: 17px;
-    font-weight: bold;
-    cursor: pointer;
-    text-decoration: none;
-    box-shadow: 0 8px 25px rgba(200, 75, 206, 0.3);
-    transition: 0.3s;
-}
-
-.btn:hover {
-    transform: translateY(-4px) scale(1.04);
-}
-
-/* ================= COMMON ================= */
-
-section {
-    position: relative;
-    z-index: 1;
-}
-
-.section-title {
-    font-size: clamp(30px, 6vw, 48px);
-    color: #d43870;
-    margin-bottom: 12px;
-}
-
-.section-subtitle {
-    font-size: 17px;
-    margin-bottom: 35px;
-}
-
-/* ================= COUNTDOWN ================= */
-
-.countdown-section {
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.countdown {
-    max-width: 1100px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 14px;
-}
-
-.time-box {
-    background: rgba(255,255,255,0.82);
-    backdrop-filter: blur(8px);
-    padding: 25px 10px;
-    border-radius: 22px;
-    box-shadow: 0 10px 30px rgba(150, 60, 100, 0.12);
-    border: 1px solid rgba(255,255,255,0.8);
-}
-
-.time-number {
-    display: block;
-    font-size: 34px;
-    font-weight: bold;
-    color: #e33d73;
-}
-
-.time-label {
-    display: block;
-    margin-top: 7px;
-    font-size: 14px;
-    color: #7b526b;
-}
-
-.birthday-message {
-    display: none;
-    margin: 30px auto;
-    padding: 30px 20px;
-    max-width: 700px;
-    background: white;
-    border-radius: 25px;
-    font-size: 25px;
-    font-weight: bold;
-    color: #e83e72;
-    box-shadow: 0 10px 30px rgba(200, 50, 100, 0.15);
-    animation: heartbeat 1.5s infinite;
-}
-
-/* ================= FRIENDSHIP ================= */
-
-.friendship {
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.friendship-card {
-    max-width: 850px;
-    margin: 35px auto 0;
-    padding: 45px 30px;
-    background: rgba(255,255,255,0.85);
-    border-radius: 35px;
-    box-shadow: 0 15px 45px rgba(150, 50, 100, 0.15);
-}
-
-.friendship-number {
-    font-size: 75px;
-    font-weight: bold;
-    color: #e83e72;
-}
-
-.friendship-card h3 {
-    font-size: 30px;
-    margin: 10px 0 20px;
-}
-
-.friendship-card p {
-    font-size: 18px;
-    line-height: 1.8;
-}
-
-/* ================= PHOTOS ================= */
-
-.photos {
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.photo-grid {
-    max-width: 1100px;
-    margin: 40px auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 22px;
-}
-
-.photo-card {
-    background: white;
-    padding: 12px;
-    border-radius: 25px;
-    box-shadow: 0 12px 30px rgba(100, 40, 80, 0.15);
-    transition: 0.4s;
-}
-
-.photo-card:hover {
-    transform: translateY(-10px) rotate(1deg);
-}
-
-.photo-card img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 18px;
-    display: block;
-}
-
-.photo-card p {
-    padding: 14px 5px 7px;
-    font-weight: bold;
-}
-
-/* ================= MEMORIES ================= */
-
-.memories {
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.memory-grid {
-    max-width: 1100px;
-    margin: 40px auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-}
-
-.memory {
-    background: white;
-    padding: 12px;
-    border-radius: 25px;
-    box-shadow: 0 12px 30px rgba(100,40,80,0.13);
-    transition: 0.35s;
-}
-
-.memory:hover {
-    transform: scale(1.03);
-}
-
-.memory img {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    border-radius: 18px;
-}
-
-.memory p {
-    padding: 14px 5px 5px;
-    font-weight: 600;
-}
-
-/* ================= MESSAGE ================= */
-
-.message-section {
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.message-card {
-    max-width: 850px;
-    margin: 35px auto;
-    background: rgba(255,255,255,0.88);
-    padding: 45px 35px;
-    border-radius: 35px;
-    box-shadow: 0 15px 40px rgba(100,40,80,0.15);
-}
-
-.message-card p {
-    font-size: 19px;
-    line-height: 2;
-    margin-bottom: 18px;
-}
-
-.signature {
-    color: #e83e72;
-    font-size: 23px !important;
-    font-weight: bold;
-}
-
-/* ================= CAKE ================= */
-
-.cake-section {
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.cake {
-    width: 220px;
-    height: 150px;
-    margin: 60px auto 30px;
-    position: relative;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.cake:hover {
-    transform: scale(1.05);
-}
-
-.cake-base {
-    position: absolute;
-    width: 220px;
-    height: 80px;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(135deg, #ff78a5, #ff4f81);
-    border-radius: 15px 15px 25px 25px;
-}
-
-.cake-top {
-    position: absolute;
-    width: 220px;
-    height: 45px;
-    top: 25px;
-    left: 0;
-    background: #fff;
-    border-radius: 50%;
-    border: 5px solid #ffb4ca;
-}
-
-.candle {
-    position: absolute;
-    width: 14px;
-    height: 55px;
-    background: #c44dcc;
-    left: 103px;
-    top: -30px;
-    border-radius: 5px;
-}
-
-.flame {
-    position: absolute;
-    width: 20px;
-    height: 30px;
-    background: #ffb300;
-    border-radius: 50% 50% 50% 0;
-    transform: rotate(-45deg);
-    left: 100px;
-    top: -58px;
-    animation: flame 0.7s infinite alternate;
-}
-
-@keyframes flame {
-    from {
-        transform: rotate(-45deg) scale(1);
+@keyframes heroAppear{
+    from{
+        opacity:0;
+        transform:translateY(50px) scale(.9);
     }
-
-    to {
-        transform: rotate(-45deg) scale(1.15);
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
     }
 }
 
-/* ================= GIFT ================= */
-
-.gift-section {
-    padding: 80px 20px;
-    text-align: center;
+.small-intro{
+    font-size:18px;
+    letter-spacing:4px;
+    color:#bd3267;
+    margin-bottom:20px;
+    animation:pulse 2s infinite;
 }
 
-.gift {
-    width: 150px;
-    height: 130px;
-    margin: 45px auto;
-    position: relative;
-    cursor: pointer;
-    transition: 0.3s;
+@keyframes pulse{
+    0%,100%{opacity:.7}
+    50%{opacity:1}
 }
 
-.gift:hover {
-    transform: scale(1.08);
+.hero h1{
+    font-size:clamp(50px,9vw,100px);
+    line-height:1;
+    color:#d52f69;
+    text-shadow:0 8px 25px rgba(213,47,105,.2);
 }
 
-.gift-box {
-    position: absolute;
-    width: 150px;
-    height: 105px;
-    bottom: 0;
-    background: #e83e72;
-    border-radius: 8px;
+.hero h1 span{
+    font-family:'Pacifico',cursive;
+    color:#ff4f88;
 }
 
-.gift-lid {
-    position: absolute;
-    width: 165px;
-    height: 35px;
-    left: -7px;
-    top: 15px;
-    background: #ff5b91;
-    border-radius: 8px;
-    z-index: 2;
+.hero-sub{
+    font-size:20px;
+    margin:25px 0;
 }
 
-.gift-ribbon-v {
-    position: absolute;
-    width: 25px;
-    height: 115px;
-    background: #ffd65c;
-    left: 62px;
-    bottom: 0;
-    z-index: 3;
+.scroll-btn{
+    display:inline-block;
+    padding:14px 30px;
+    border-radius:40px;
+    background:#d52f69;
+    color:white;
+    text-decoration:none;
+    box-shadow:0 10px 30px rgba(213,47,105,.3);
+    transition:.3s;
 }
 
-.gift-ribbon-h {
-    position: absolute;
-    width: 165px;
-    height: 18px;
-    background: #ffd65c;
-    left: -7px;
-    top: 22px;
-    z-index: 4;
+.scroll-btn:hover{
+    transform:translateY(-5px) scale(1.05);
 }
 
-.gift-message {
-    display: none;
-    max-width: 700px;
-    margin: 25px auto;
-    padding: 35px;
-    background: white;
-    border-radius: 30px;
-    box-shadow: 0 15px 40px rgba(100,40,80,0.15);
-    font-size: 20px;
-    line-height: 1.8;
-    animation: fadeDown 0.7s ease;
+/* balloons */
+
+.balloon{
+    position:absolute;
+    width:60px;
+    height:75px;
+    border-radius:50%;
+    animation:balloonFloat 4s ease-in-out infinite;
+    opacity:.75;
 }
 
-/* ================= GAME ================= */
-
-.game-section {
-    padding: 80px 20px;
-    text-align: center;
+.balloon:after{
+    content:"";
+    position:absolute;
+    width:2px;
+    height:100px;
+    background:#9e6b80;
+    top:70px;
+    left:50%;
 }
 
-.score {
-    font-size: 22px;
-    font-weight: bold;
-    margin: 15px;
-    color: #d43870;
+.b1{
+    background:#ff709f;
+    left:8%;
+    top:18%;
 }
 
-.game-area {
-    position: relative;
-    max-width: 800px;
-    height: 400px;
-    margin: 35px auto;
-    background: rgba(255,255,255,0.78);
-    border-radius: 30px;
-    overflow: hidden;
-    box-shadow: 0 12px 35px rgba(100,40,80,0.12);
+.b2{
+    background:#ffc3d8;
+    right:10%;
+    top:25%;
+    animation-delay:1s;
 }
 
-.game-heart {
-    position: absolute;
-    font-size: 35px;
-    cursor: pointer;
-    user-select: none;
-    animation: pulse 0.7s infinite alternate;
+.b3{
+    background:#ffb0c9;
+    left:15%;
+    bottom:15%;
+    animation-delay:2s;
 }
 
-@keyframes pulse {
-    from {
-        transform: scale(0.9);
+.b4{
+    background:#f76f9e;
+    right:16%;
+    bottom:13%;
+    animation-delay:1.5s;
+}
+
+@keyframes balloonFloat{
+    0%,100%{transform:translateY(0) rotate(-5deg)}
+    50%{transform:translateY(-25px) rotate(5deg)}
+}
+
+/* ---------------- COMMON ---------------- */
+
+section{
+    position:relative;
+    z-index:1;
+    padding:100px 20px;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    font-size:clamp(32px,5vw,52px);
+    color:#c92d65;
+    margin-bottom:15px;
+}
+
+.section-subtitle{
+    text-align:center;
+    font-size:17px;
+    margin-bottom:50px;
+}
+
+/* ---------------- COUNTDOWN ---------------- */
+
+.countdown-section{
+    background:#fff7fa;
+}
+
+.countdown-box{
+    background:white;
+    border-radius:35px;
+    padding:50px 30px;
+    box-shadow:0 25px 70px rgba(180,70,110,.15);
+    text-align:center;
+    animation:cardFloat 5s ease-in-out infinite;
+}
+
+@keyframes cardFloat{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-8px)}
+}
+
+.count-title{
+    font-size:clamp(28px,5vw,45px);
+    color:#d52f69;
+    margin-bottom:10px;
+}
+
+.count-sub{
+    margin-bottom:35px;
+}
+
+.countdown{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.time-card{
+    background:linear-gradient(145deg,#fff,#ffe5ef);
+    padding:25px 10px;
+    border-radius:22px;
+    box-shadow:0 12px 30px rgba(210,47,105,.12);
+    transition:.3s;
+}
+
+.time-card:hover{
+    transform:translateY(-8px) rotate(-2deg);
+}
+
+.time-number{
+    font-size:40px;
+    font-weight:800;
+    color:#dc326d;
+}
+
+.time-label{
+    font-size:13px;
+    color:#936477;
+}
+
+.birthday-message{
+    display:none;
+    animation:birthdayPop 1s ease;
+}
+
+@keyframes birthdayPop{
+    0%{transform:scale(.3);opacity:0}
+    70%{transform:scale(1.1)}
+    100%{transform:scale(1);opacity:1}
+}
+
+.birthday-message h2{
+    font-family:'Pacifico',cursive;
+    font-size:clamp(40px,8vw,75px);
+    color:#ef3d78;
+}
+
+.birthday-message p{
+    font-size:20px;
+    margin-top:15px;
+}
+
+/* ---------------- FIGHTS ---------------- */
+
+.fight-section{
+    background:
+        linear-gradient(135deg,#fff0f5,#ffe1ec);
+}
+
+.fight-card{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    border-radius:35px;
+    padding:55px 35px;
+    text-align:center;
+    box-shadow:0 25px 70px rgba(180,70,110,.16);
+    position:relative;
+    overflow:hidden;
+}
+
+.fight-card:before{
+    content:"🥊";
+    position:absolute;
+    font-size:130px;
+    opacity:.06;
+    left:-20px;
+    top:-20px;
+}
+
+.fight-card:after{
+    content:"😂";
+    position:absolute;
+    font-size:130px;
+    opacity:.06;
+    right:-20px;
+    bottom:-20px;
+}
+
+.fight-number{
+    font-size:80px;
+    font-weight:800;
+    color:#e3316d;
+    animation:fightNumber 1.5s ease infinite alternate;
+}
+
+@keyframes fightNumber{
+    from{transform:rotate(-2deg)}
+    to{transform:rotate(2deg) scale(1.03)}
+}
+
+.fight-card h3{
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.fight-text{
+    font-size:18px;
+    line-height:1.9;
+}
+
+.fight-lines{
+    margin-top:30px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+}
+
+.fight-pill{
+    background:#ffe4ee;
+    padding:12px 18px;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.fight-pill:hover{
+    background:#ffbed5;
+    transform:rotate(-3deg) scale(1.05);
+}
+
+/* ---------------- PHOTOS ---------------- */
+
+.photos-section{
+    background:#fff;
+}
+
+.photo-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.photo-card{
+    background:white;
+    padding:14px 14px 22px;
+    border-radius:12px;
+    box-shadow:0 15px 35px rgba(100,40,70,.15);
+    transition:.5s;
+    opacity:0;
+    transform:translateY(50px) rotate(var(--rotation));
+}
+
+.photo-card.show{
+    opacity:1;
+    transform:translateY(0) rotate(var(--rotation));
+}
+
+.photo-card:nth-child(1){--rotation:-3deg}
+.photo-card:nth-child(2){--rotation:2deg}
+.photo-card:nth-child(3){--rotation:-2deg}
+.photo-card:nth-child(4){--rotation:3deg}
+.photo-card:nth-child(5){--rotation:-2deg}
+.photo-card:nth-child(6){--rotation:2deg}
+
+.photo-card:hover{
+    transform:translateY(-15px) rotate(0deg) scale(1.04);
+    z-index:3;
+}
+
+.photo-card img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    border-radius:8px;
+    display:block;
+}
+
+.photo-card p{
+    text-align:center;
+    padding-top:17px;
+    font-size:15px;
+}
+
+/* ---------------- MESSAGE ---------------- */
+
+.message-section{
+    background:linear-gradient(135deg,#ffe7f0,#fff5f9);
+}
+
+.envelope{
+    width:min(650px,95%);
+    margin:auto;
+    cursor:pointer;
+    perspective:1000px;
+}
+
+.envelope-top{
+    background:#d93670;
+    color:white;
+    padding:22px;
+    text-align:center;
+    border-radius:25px 25px 0 0;
+    font-size:22px;
+    box-shadow:0 15px 35px rgba(190,45,100,.2);
+}
+
+.envelope-body{
+    background:white;
+    min-height:120px;
+    border-radius:0 0 25px 25px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:30px;
+    font-size:18px;
+    transition:.8s;
+    box-shadow:0 20px 40px rgba(190,45,100,.12);
+}
+
+.envelope-body p{
+    transition:.8s;
+}
+
+.message-content{
+    display:none;
+    text-align:left;
+    line-height:2;
+    animation:letterOpen 1s ease;
+}
+
+@keyframes letterOpen{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.envelope.open .envelope-body{
+    min-height:400px;
+    align-items:flex-start;
+}
+
+.envelope.open .open-text{
+    display:none;
+}
+
+.envelope.open .message-content{
+    display:block;
+}
+
+/* ---------------- GIFT ---------------- */
+
+.gift-section{
+    text-align:center;
+    background:#fff;
+}
+
+.gift{
+    width:150px;
+    height:120px;
+    margin:50px auto 20px;
+    position:relative;
+    cursor:pointer;
+    animation:giftBounce 2s infinite;
+}
+
+@keyframes giftBounce{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-15px)}
+}
+
+.gift-box{
+    position:absolute;
+    bottom:0;
+    width:150px;
+    height:95px;
+    background:#ed4d82;
+    border-radius:8px;
+}
+
+.gift-lid{
+    position:absolute;
+    top:10px;
+    left:-8px;
+    width:166px;
+    height:30px;
+    background:#d93670;
+    border-radius:7px;
+    z-index:3;
+    transition:.8s;
+}
+
+.gift-ribbon{
+    position:absolute;
+    left:63px;
+    width:25px;
+    height:120px;
+    background:#ffd1df;
+    z-index:2;
+}
+
+.gift.open .gift-lid{
+    transform:translateY(-65px) rotate(-10deg);
+}
+
+.gift-note{
+    display:none;
+    margin:25px auto;
+    max-width:600px;
+    padding:30px;
+    background:#fff0f6;
+    border-radius:25px;
+    animation:notePop .8s ease;
+}
+
+@keyframes notePop{
+    from{opacity:0;transform:scale(.5)}
+    to{opacity:1;transform:scale(1)}
+}
+
+.gift-note.show{
+    display:block;
+}
+
+.gift-note h3{
+    color:#d93670;
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+/* ---------------- FINAL ---------------- */
+
+.final-section{
+    min-height:70vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:
+        radial-gradient(circle at center,#ffd9e8,#fff0f6 60%);
+}
+
+.final-heart{
+    font-size:100px;
+    animation:heartBeat 1.2s infinite;
+}
+
+@keyframes heartBeat{
+    0%,100%{transform:scale(1)}
+    15%{transform:scale(1.2)}
+    30%{transform:scale(1)}
+    45%{transform:scale(1.15)}
+}
+
+.final-section h2{
+    font-family:'Pacifico',cursive;
+    color:#d93670;
+    font-size:clamp(40px,7vw,70px);
+}
+
+.final-section p{
+    margin-top:20px;
+    font-size:18px;
+}
+
+/* ---------------- CONFETTI ---------------- */
+
+.confetti{
+    position:fixed;
+    width:9px;
+    height:15px;
+    top:-20px;
+    z-index:100;
+    pointer-events:none;
+    animation:confettiFall linear forwards;
+}
+
+@keyframes confettiFall{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+        opacity:0;
+    }
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media(max-width:800px){
+
+    .countdown{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    to {
-        transform: scale(1.15);
+    .photo-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .photo-card img{
+        height:240px;
+    }
+
+    .balloon{
+        transform:scale(.7);
     }
 }
 
-/* ================= FOOTER ================= */
+@media(max-width:520px){
 
-footer {
-    padding: 50px 20px;
-    text-align: center;
-    background: rgba(255,255,255,0.5);
-}
-
-footer h2 {
-    color: #e83e72;
-    margin-bottom: 12px;
-}
-
-footer p {
-    line-height: 1.7;
-}
-
-/* ================= CONFETTI ================= */
-
-.confetti {
-    position: fixed;
-    width: 10px;
-    height: 10px;
-    top: -20px;
-    z-index: 9999;
-    pointer-events: none;
-    animation: fall 3s linear forwards;
-}
-
-@keyframes fall {
-    to {
-        transform: translateY(110vh) rotate(720deg);
-        opacity: 0;
-    }
-}
-
-/* ================= ANIMATIONS ================= */
-
-@keyframes heartbeat {
-    0%, 100% {
-        transform: scale(1);
+    section{
+        padding:70px 15px;
     }
 
-    50% {
-        transform: scale(1.04);
-    }
-}
-
-@keyframes fadeDown {
-    from {
-        opacity: 0;
-        transform: translateY(-25px);
+    .hero h1{
+        font-size:55px;
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ================= MOBILE ================= */
-
-@media (max-width: 900px) {
-
-    .countdown {
-        grid-template-columns: repeat(4, 1fr);
+    .hero-sub{
+        font-size:16px;
     }
 
-    .photo-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .countdown-box{
+        padding:35px 15px;
     }
 
-    .memory-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-
-    .hero {
-        min-height: 90vh;
+    .time-number{
+        font-size:32px;
     }
 
-    .hero p {
-        font-size: 16px;
+    .photo-grid{
+        grid-template-columns:1fr;
     }
 
-    .countdown {
-        grid-template-columns: repeat(2, 1fr);
+    .photo-card img{
+        height:330px;
     }
 
-    .time-number {
-        font-size: 28px;
+    .fight-card{
+        padding:40px 20px;
     }
 
-    .photo-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-    }
-
-    .memory-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .friendship-card,
-    .message-card,
-    .gift-message {
-        padding: 30px 20px;
-    }
-
-    .friendship-number {
-        font-size: 60px;
-    }
-
-    .message-card p {
-        font-size: 17px;
-    }
-
-    .game-area {
-        height: 330px;
+    .fight-number{
+        font-size:65px;
     }
 }
 </style>
@@ -647,33 +693,39 @@ footer p {
 <body>
 
 <!-- FLOATING HEARTS -->
-<div class="hearts"></div>
+<div class="bg-heart" style="left:5%;animation-duration:10s;">❤️</div>
+<div class="bg-heart" style="left:15%;animation-duration:13s;animation-delay:2s;">💗</div>
+<div class="bg-heart" style="left:30%;animation-duration:9s;animation-delay:4s;">💕</div>
+<div class="bg-heart" style="left:48%;animation-duration:12s;animation-delay:1s;">❤️</div>
+<div class="bg-heart" style="left:65%;animation-duration:10s;animation-delay:3s;">💖</div>
+<div class="bg-heart" style="left:80%;animation-duration:14s;">💗</div>
+<div class="bg-heart" style="left:92%;animation-duration:11s;animation-delay:5s;">❤️</div>
 
 
-<!-- ================= HERO ================= -->
-
+<!-- HERO -->
 <section class="hero">
 
-    <div class="hero-box">
+    <div class="balloon b1"></div>
+    <div class="balloon b2"></div>
+    <div class="balloon b3"></div>
+    <div class="balloon b4"></div>
 
-        <div class="small-text">
-            ✨ A special day for a special person ✨
+    <div class="hero-content">
+
+        <div class="small-intro">
+            ✨ A LITTLE SURPRISE FOR YOU ✨
         </div>
 
-        <h1>🎉 Happy Birthday! 🎉</h1>
+        <h1>
+            Happy Birthday<br>
+            <span>Rohith ❤️</span>
+        </h1>
 
-        <h2>Rohith ❤️</h2>
-
-        <p>
-            Today isn't just another day...
-            It's the day someone really special came into this world. 🥹❤️
+        <p class="hero-sub">
+            To the person who somehow survived <b>1 whole year</b> of our friendship 😂
         </p>
 
-        <p>
-            And I'm really lucky that our paths crossed. 🫂✨
-        </p>
-
-        <a href="#countdown" class="btn">
+        <a href="#countdown" class="scroll-btn">
             🎁 Open Your Surprise
         </a>
 
@@ -682,122 +734,148 @@ footer p {
 </section>
 
 
-<!-- ================= COUNTDOWN ================= -->
-
+<!-- COUNTDOWN -->
 <section class="countdown-section" id="countdown">
 
-    <h2 class="section-title">
-        🎂 Birthday Countdown 🎂
-    </h2>
+<div class="container">
 
-    <p class="section-subtitle">
-        Counting down to Rohith's 19th birthday ❤️
-    </p>
+    <div class="countdown-box">
 
-    <div class="countdown">
+        <div id="countdownArea">
 
-        <div class="time-box">
-            <span class="time-number" id="years">0</span>
-            <span class="time-label">Years</span>
+            <h2 class="count-title">
+                🎂 Birthday Countdown 🎂
+            </h2>
+
+            <p class="count-sub">
+                Counting down to Rohith's 19th birthday ❤️
+            </p>
+
+            <div class="countdown">
+
+                <div class="time-card">
+                    <div class="time-number" id="days">0</div>
+                    <div class="time-label">DAYS</div>
+                </div>
+
+                <div class="time-card">
+                    <div class="time-number" id="hours">0</div>
+                    <div class="time-label">HOURS</div>
+                </div>
+
+                <div class="time-card">
+                    <div class="time-number" id="minutes">0</div>
+                    <div class="time-label">MINUTES</div>
+                </div>
+
+                <div class="time-card">
+                    <div class="time-number" id="seconds">0</div>
+                    <div class="time-label">SECONDS</div>
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="time-box">
-            <span class="time-number" id="months">0</span>
-            <span class="time-label">Months</span>
-        </div>
 
-        <div class="time-box">
-            <span class="time-number" id="weeks">0</span>
-            <span class="time-label">Weeks</span>
-        </div>
+        <div class="birthday-message" id="birthdayMessage">
 
-        <div class="time-box">
-            <span class="time-number" id="days">0</span>
-            <span class="time-label">Days</span>
-        </div>
+            <h2>🎉 HE IS 19!!! 🎉</h2>
 
-        <div class="time-box">
-            <span class="time-number" id="hours">0</span>
-            <span class="time-label">Hours</span>
-        </div>
+            <p>
+                Happy 19th Birthday, Rohith! ❤️
+            </p>
 
-        <div class="time-box">
-            <span class="time-number" id="minutes">0</span>
-            <span class="time-label">Minutes</span>
-        </div>
+            <p>
+                Today isn't just another day...
+                it's officially your day! 🥳
+            </p>
 
-        <div class="time-box">
-            <span class="time-number" id="seconds">0</span>
-            <span class="time-label">Seconds</span>
         </div>
 
     </div>
 
-    <div class="birthday-message" id="birthdayMessage">
-
-        🎉 IT'S ROHITH'S BIRTHDAY! 🎉
-        <br><br>
-        ❤️ HAPPY 19TH BIRTHDAY! ❤️
-        <br><br>
-        🎂 Welcome to 19! 🎂
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- ================= FRIENDSHIP ================= -->
+<!-- FIGHTS -->
+<section class="fight-section">
 
-<section class="friendship">
+<div class="container">
 
     <h2 class="section-title">
-        🤝 Our Friendship ❤️
+        🥊 Us in One Section
     </h2>
 
     <p class="section-subtitle">
-        One year down... many more to go! 🫂
+        Because apparently friendship without fighting is impossible 😂
     </p>
 
-    <div class="friendship-card">
+    <div class="fight-card">
 
-        <div class="friendship-number">
-            1 ❤️
+        <div class="fight-number">
+            1 YEAR
         </div>
 
         <h3>
-            One Beautiful Year of Friendship
+            ...and WAY TOO MANY FIGHTS 😂
         </h3>
 
-        <p>
-            One year of friendship may sound like just a number,
-            but behind that number are countless conversations,
-            silly moments, laughs, memories and unforgettable
-            moments that I'll always cherish. 🥹❤️
+        <p class="fight-text">
+
+            We've had arguments.<br>
+            We've annoyed each other.<br>
+            We've misunderstood each other.<br>
+            We've probably thought "I'm never talking to you again." 😭😂
+
+            <br><br>
+
+            But somehow...
+
+            <br>
+
+            <b>we're still here. ❤️</b>
+
         </p>
 
-        <br>
+        <div class="fight-lines">
 
-        <p>
-            Thank you for being a part of my life, Rohith.
-            Here's to another year of annoying each other,
-            laughing together and making even more memories! 😂❤️
+            <div class="fight-pill">🥊 Fight</div>
+            <div class="fight-pill">😤 Get Angry</div>
+            <div class="fight-pill">🙄 Ignore</div>
+            <div class="fight-pill">😂 Start Talking</div>
+            <div class="fight-pill">❤️ Repeat</div>
+
+        </div>
+
+        <p style="margin-top:30px;font-weight:600;">
+            Our friendship formula:
+            <br>
+            <span style="font-size:22px;">
+                Fight → Ignore → Laugh → Forgive → Repeat 🔁
+            </span>
         </p>
 
     </div>
 
+</div>
+
 </section>
 
 
-<!-- ================= PHOTOS ================= -->
+<!-- SIX PHOTOS -->
+<section class="photos-section">
 
-<section class="photos">
+<div class="container">
 
     <h2 class="section-title">
-        📸 A Few Moments ❤️
+        📸 A Few Moments
     </h2>
 
     <p class="section-subtitle">
-        Some pictures deserve a permanent place here. 🥹
+        Six little pieces of memories I wanted to keep here. ❤️
     </p>
 
     <div class="photo-grid">
@@ -809,82 +887,383 @@ footer p {
 
         <div class="photo-card">
             <img src="2.jpg" alt="Rohith photo 2">
-            <p>😂 The memories we made</p>
+            <p>😂 One of those unforgettable moments</p>
         </div>
 
         <div class="photo-card">
             <img src="3.jpg" alt="Rohith photo 3">
-            <p>❤️ A moment to remember</p>
+            <p>❤️ A moment worth keeping</p>
         </div>
 
         <div class="photo-card">
             <img src="4.jpg" alt="Rohith photo 4">
-            <p>🫂 One for the memories</p>
+            <p>🥹 A memory I'll always remember</p>
+        </div>
+
+        <div class="photo-card">
+            <img src="5.jpg" alt="Rohith photo 5">
+            <p>😂 More chaos, more memories</p>
+        </div>
+
+        <div class="photo-card">
+            <img src="6.jpg" alt="Rohith photo 6">
+            <p>💗 Just one more memory</p>
         </div>
 
     </div>
 
-</section>
-
-
-<!-- ================= MEMORY WALL ================= -->
-
-<section class="memories">
-
-    <h2 class="section-title">
-        🖼️ Our Memory Wall
-    </h2>
-
-    <p class="section-subtitle">
-        Six little pieces of our friendship. ❤️
-    </p>
-
-    <div class="memory-grid">
-
-        <div class="memory">
-            <img src="1.jpg" alt="Memory 1">
-            <p>🌸 Memory #1</p>
-        </div>
-
-        <div class="memory">
-            <img src="2.jpg" alt="Memory 2">
-            <p>💫 Memory #2</p>
-        </div>
-
-        <div class="memory">
-            <img src="3.jpg" alt="Memory 3">
-            <p>😂 Memory #3</p>
-        </div>
-
-        <div class="memory">
-            <img src="4.jpg" alt="Memory 4">
-            <p>❤️ Memory #4</p>
-        </div>
-
-        <div class="memory">
-            <img src="5.jpg" alt="Memory 5">
-            <p>🫂 Memory #5</p>
-        </div>
-
-        <div class="memory">
-            <img src="6.jpg" alt="Memory 6">
-            <p>✨ Memory #6</p>
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- ================= MESSAGE ================= -->
-
+<!-- MESSAGE -->
 <section class="message-section">
+
+<div class="container">
 
     <h2 class="section-title">
         💌 A Little Message For You
     </h2>
 
-    <div class="message-card">
+    <p class="section-subtitle">
+        Don't worry... this one doesn't start with a fight 😂
+    </p>
+
+
+    <div class="envelope" id="envelope">
+
+        <div class="envelope-top">
+            💌 Click to Open
+        </div>
+
+        <div class="envelope-body">
+
+            <div class="open-text">
+                Tap here... I actually wrote something 🥹❤️
+            </div>
+
+            <div class="message-content">
+
+                <p>
+                    Dear Rohith,
+                </p>
+
+                <p>
+                    One year.
+                </p>
+
+                <p>
+                    It sounds like such a small amount of time,
+                    but somehow within this one year we've managed
+                    to create so many memories.
+                </p>
+
+                <p>
+                    We've laughed.
+                    We've annoyed each other.
+                    We've had A LOT of fights. 😂
+                </p>
+
+                <p>
+                    There were times when we probably wondered
+                    why we even became friends in the first place. 😭
+                </p>
+
+                <p>
+                    But after every fight,
+                    somehow we ended up talking again.
+                </p>
+
+                <p>
+                    And honestly...
+                    I think that's what makes our friendship special.
+                </p>
+
+                <p>
+                    It isn't perfect.
+                    We aren't perfect.
+                    We fight, we get angry, we annoy each other...
+                    but we still care.
+                </p>
+
+                <p>
+                    So on your 19th birthday,
+                    I just want to say:
+                </p>
+
+                <p style="font-weight:700;color:#d52f69;font-size:21px;">
+                    Thank you for being a part of this crazy
+                    one-year journey. ❤️
+                </p>
+
+                <p>
+                    Here's to more laughs,
+                    more memories,
+                    more stupid arguments,
+                    and unfortunately...
+                    probably more fights. 😂
+                </p>
+
+                <p>
+                    Happy 19th Birthday, Rohith! 🎂❤️
+                </p>
+
+                <p style="text-align:right;">
+                    — From someone who still hasn't blocked you 😂❤️
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- GIFT -->
+<section class="gift-section">
+
+<div class="container">
+
+    <h2 class="section-title">
+        🎁 One Last Thing...
+    </h2>
+
+    <p class="section-subtitle">
+        You found the gift. Now open it 👀
+    </p>
+
+    <div class="gift" id="gift">
+
+        <div class="gift-lid"></div>
+
+        <div class="gift-box"></div>
+
+        <div class="gift-ribbon"></div>
+
+    </div>
+
+    <p>
+        👆 Click the gift
+    </p>
+
+    <div class="gift-note" id="giftNote">
+
+        <h3>
+            🎉 SURPRISE!
+        </h3>
 
         <p>
-            Dear
+            Congratulations!
+            You have successfully completed
+            one year of friendship with me. 😂❤️
+        </p>
+
+        <p style="margin-top:15px;">
+            Your reward:
+            <b>another year of putting up with me. 😌</b>
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- FINAL -->
+<section class="final-section">
+
+<div>
+
+    <div class="final-heart">
+        ❤️
+    </div>
+
+    <h2>
+        Happy Birthday, Rohith!
+    </h2>
+
+    <p>
+        19 looks good on you. 😌✨
+    </p>
+
+    <p>
+        Now go enjoy your day! 🎂🎉
+    </p>
+
+</div>
+
+</section>
+
+
+<script>
+
+/* ---------------- COUNTDOWN ---------------- */
+
+const birthday = new Date("2026-09-15T00:00:00");
+
+function updateCountdown(){
+
+    const now = new Date();
+
+    const difference = birthday - now;
+
+    /* Birthday has arrived */
+    if(difference <= 0){
+
+        document.getElementById("countdownArea").style.display="none";
+
+        document.getElementById("birthdayMessage").style.display="block";
+
+        launchConfetti();
+
+        return;
+    }
+
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+
+    const hours = Math.floor(
+        (difference / (1000 * 60 * 60)) % 24
+    );
+
+    const minutes = Math.floor(
+        (difference / (1000 * 60)) % 60
+    );
+
+    const seconds = Math.floor(
+        (difference / 1000) % 60
+    );
+
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
+}
+
+updateCountdown();
+
+setInterval(updateCountdown,1000);
+
+
+/* ---------------- OPEN LETTER ---------------- */
+
+const envelope = document.getElementById("envelope");
+
+envelope.addEventListener("click",function(){
+
+    envelope.classList.toggle("open");
+
+});
+
+
+/* ---------------- GIFT ---------------- */
+
+const gift = document.getElementById("gift");
+const giftNote = document.getElementById("giftNote");
+
+gift.addEventListener("click",function(){
+
+    gift.classList.toggle("open");
+
+    if(gift.classList.contains("open")){
+
+        giftNote.classList.add("show");
+
+        launchConfetti();
+
+    }
+
+});
+
+
+/* ---------------- PHOTO ANIMATION ---------------- */
+
+const photos = document.querySelectorAll(".photo-card");
+
+const photoObserver = new IntersectionObserver(
+
+    entries => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("show");
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold:.2
+    }
+
+);
+
+photos.forEach(photo => {
+
+    photoObserver.observe(photo);
+
+});
+
+
+/* ---------------- CONFETTI ---------------- */
+
+function launchConfetti(){
+
+    for(let i=0;i<80;i++){
+
+        const confetti = document.createElement("div");
+
+        confetti.className="confetti";
+
+        confetti.style.left =
+            Math.random()*100+"vw";
+
+        confetti.style.animationDuration =
+            (Math.random()*3+2)+"s";
+
+        confetti.style.background =
+            ["#ff4f88","#ffd166","#ff8fab","#c77dff","#72ddf7"]
+            [Math.floor(Math.random()*5)];
+
+        confetti.style.transform =
+            "rotate("+Math.random()*360+"deg)";
+
+        document.body.appendChild(confetti);
+
+        setTimeout(() => {
+
+            confetti.remove();
+
+        },5000);
+
+    }
+
+}
+
+
+/* ---------------- BIRTHDAY AUTO CONFETTI ---------------- */
+
+const today = new Date();
+
+if(
+    today.getMonth() === 8 &&
+    today.getDate() === 15
+){
+
+    setTimeout(launchConfetti,1500);
+
+}
+
+</script>
+
+</body>
+</html>
