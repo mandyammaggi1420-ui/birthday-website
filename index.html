@@ -24,7 +24,7 @@ body {
     overflow-x: hidden;
 }
 
-/* ---------------- BACKGROUND HEARTS ---------------- */
+/* ================= FLOATING HEARTS ================= */
 
 .hearts {
     position: fixed;
@@ -36,10 +36,9 @@ body {
 
 .heart {
     position: absolute;
-    bottom: -50px;
-    font-size: 20px;
+    bottom: -60px;
     animation: floatHeart linear infinite;
-    opacity: 0.65;
+    opacity: 0.6;
 }
 
 @keyframes floatHeart {
@@ -58,7 +57,7 @@ body {
     }
 }
 
-/* ---------------- HERO ---------------- */
+/* ================= HERO ================= */
 
 .hero {
     min-height: 100vh;
@@ -90,7 +89,7 @@ body {
 }
 
 .hero h2 {
-    font-size: clamp(25px, 5vw, 45px);
+    font-size: clamp(28px, 6vw, 48px);
     color: #9c3b73;
     margin-top: 10px;
 }
@@ -98,7 +97,7 @@ body {
 .hero p {
     font-size: 19px;
     margin: 20px auto;
-    max-width: 650px;
+    max-width: 680px;
     line-height: 1.7;
 }
 
@@ -122,11 +121,9 @@ body {
     transform: translateY(-4px) scale(1.04);
 }
 
-/* ---------------- COUNTDOWN ---------------- */
+/* ================= COMMON ================= */
 
-.countdown-section {
-    padding: 70px 20px;
-    text-align: center;
+section {
     position: relative;
     z-index: 1;
 }
@@ -142,6 +139,13 @@ body {
     margin-bottom: 35px;
 }
 
+/* ================= COUNTDOWN ================= */
+
+.countdown-section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
 .countdown {
     max-width: 1100px;
     margin: auto;
@@ -151,7 +155,7 @@ body {
 }
 
 .time-box {
-    background: rgba(255,255,255,0.78);
+    background: rgba(255,255,255,0.82);
     backdrop-filter: blur(8px);
     padding: 25px 10px;
     border-radius: 22px;
@@ -175,8 +179,8 @@ body {
 
 .birthday-message {
     display: none;
-    margin: 25px auto;
-    padding: 25px;
+    margin: 30px auto;
+    padding: 30px 20px;
     max-width: 700px;
     background: white;
     border-radius: 25px;
@@ -184,22 +188,21 @@ body {
     font-weight: bold;
     color: #e83e72;
     box-shadow: 0 10px 30px rgba(200, 50, 100, 0.15);
+    animation: heartbeat 1.5s infinite;
 }
 
-/* ---------------- FRIENDSHIP ---------------- */
+/* ================= FRIENDSHIP ================= */
 
 .friendship {
     padding: 80px 20px;
     text-align: center;
-    position: relative;
-    z-index: 1;
 }
 
 .friendship-card {
     max-width: 850px;
     margin: 35px auto 0;
     padding: 45px 30px;
-    background: rgba(255,255,255,0.82);
+    background: rgba(255,255,255,0.85);
     border-radius: 35px;
     box-shadow: 0 15px 45px rgba(150, 50, 100, 0.15);
 }
@@ -220,13 +223,11 @@ body {
     line-height: 1.8;
 }
 
-/* ---------------- PHOTO CARDS ---------------- */
+/* ================= PHOTOS ================= */
 
 .photos {
     padding: 80px 20px;
     text-align: center;
-    position: relative;
-    z-index: 1;
 }
 
 .photo-grid {
@@ -262,13 +263,11 @@ body {
     font-weight: bold;
 }
 
-/* ---------------- MEMORIES ---------------- */
+/* ================= MEMORIES ================= */
 
 .memories {
     padding: 80px 20px;
     text-align: center;
-    position: relative;
-    z-index: 1;
 }
 
 .memory-grid {
@@ -303,19 +302,17 @@ body {
     font-weight: 600;
 }
 
-/* ---------------- MESSAGE ---------------- */
+/* ================= MESSAGE ================= */
 
 .message-section {
     padding: 80px 20px;
     text-align: center;
-    position: relative;
-    z-index: 1;
 }
 
 .message-card {
     max-width: 850px;
     margin: 35px auto;
-    background: rgba(255,255,255,0.85);
+    background: rgba(255,255,255,0.88);
     padding: 45px 35px;
     border-radius: 35px;
     box-shadow: 0 15px 40px rgba(100,40,80,0.15);
@@ -333,13 +330,11 @@ body {
     font-weight: bold;
 }
 
-/* ---------------- CAKE ---------------- */
+/* ================= CAKE ================= */
 
 .cake-section {
     padding: 80px 20px;
     text-align: center;
-    position: relative;
-    z-index: 1;
 }
 
 .cake {
@@ -348,6 +343,11 @@ body {
     margin: 60px auto 30px;
     position: relative;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+.cake:hover {
+    transform: scale(1.05);
 }
 
 .cake-base {
@@ -358,7 +358,6 @@ body {
     left: 0;
     background: linear-gradient(135deg, #ff78a5, #ff4f81);
     border-radius: 15px 15px 25px 25px;
-    box-shadow: 0 10px 20px rgba(200,50,100,0.2);
 }
 
 .cake-top {
@@ -398,22 +397,17 @@ body {
     from {
         transform: rotate(-45deg) scale(1);
     }
+
     to {
         transform: rotate(-45deg) scale(1.15);
     }
 }
 
-.cake-hint {
-    font-size: 17px;
-}
-
-/* ---------------- GIFT ---------------- */
+/* ================= GIFT ================= */
 
 .gift-section {
     padding: 80px 20px;
     text-align: center;
-    position: relative;
-    z-index: 1;
 }
 
 .gift {
@@ -479,15 +473,21 @@ body {
     box-shadow: 0 15px 40px rgba(100,40,80,0.15);
     font-size: 20px;
     line-height: 1.8;
+    animation: fadeDown 0.7s ease;
 }
 
-/* ---------------- GAME ---------------- */
+/* ================= GAME ================= */
 
 .game-section {
     padding: 80px 20px;
     text-align: center;
-    position: relative;
-    z-index: 1;
+}
+
+.score {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 15px;
+    color: #d43870;
 }
 
 .game-area {
@@ -495,7 +495,7 @@ body {
     max-width: 800px;
     height: 400px;
     margin: 35px auto;
-    background: rgba(255,255,255,0.75);
+    background: rgba(255,255,255,0.78);
     border-radius: 30px;
     overflow: hidden;
     box-shadow: 0 12px 35px rgba(100,40,80,0.12);
@@ -509,21 +509,22 @@ body {
     animation: pulse 0.7s infinite alternate;
 }
 
-.score {
-    font-size: 22px;
-    font-weight: bold;
-    margin: 15px;
-    color: #d43870;
+@keyframes pulse {
+    from {
+        transform: scale(0.9);
+    }
+
+    to {
+        transform: scale(1.15);
+    }
 }
 
-/* ---------------- FOOTER ---------------- */
+/* ================= FOOTER ================= */
 
 footer {
     padding: 50px 20px;
     text-align: center;
     background: rgba(255,255,255,0.5);
-    position: relative;
-    z-index: 1;
 }
 
 footer h2 {
@@ -535,7 +536,26 @@ footer p {
     line-height: 1.7;
 }
 
-/* ---------------- ANIMATIONS ---------------- */
+/* ================= CONFETTI ================= */
+
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    top: -20px;
+    z-index: 9999;
+    pointer-events: none;
+    animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* ================= ANIMATIONS ================= */
 
 @keyframes heartbeat {
     0%, 100% {
@@ -559,26 +579,7 @@ footer p {
     }
 }
 
-/* ---------------- CONFETTI ---------------- */
-
-.confetti {
-    position: fixed;
-    width: 10px;
-    height: 10px;
-    top: -20px;
-    z-index: 9999;
-    pointer-events: none;
-    animation: fall 3s linear forwards;
-}
-
-@keyframes fall {
-    to {
-        transform: translateY(110vh) rotate(720deg);
-        opacity: 0;
-    }
-}
-
-/* ---------------- RESPONSIVE ---------------- */
+/* ================= MOBILE ================= */
 
 @media (max-width: 900px) {
 
@@ -607,11 +608,6 @@ footer p {
 
     .countdown {
         grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-    }
-
-    .time-box {
-        padding: 20px 8px;
     }
 
     .time-number {
@@ -653,7 +649,9 @@ footer p {
 <!-- FLOATING HEARTS -->
 <div class="hearts"></div>
 
-<!-- HERO -->
+
+<!-- ================= HERO ================= -->
+
 <section class="hero">
 
     <div class="hero-box">
@@ -672,7 +670,7 @@ footer p {
         </p>
 
         <p>
-            And I'm so lucky that our paths crossed. 🫂✨
+            And I'm really lucky that our paths crossed. 🫂✨
         </p>
 
         <a href="#countdown" class="btn">
@@ -684,7 +682,8 @@ footer p {
 </section>
 
 
-<!-- COUNTDOWN -->
+<!-- ================= COUNTDOWN ================= -->
+
 <section class="countdown-section" id="countdown">
 
     <h2 class="section-title">
@@ -692,7 +691,7 @@ footer p {
     </h2>
 
     <p class="section-subtitle">
-        Counting down to Rohith's special day ❤️
+        Counting down to Rohith's 19th birthday ❤️
     </p>
 
     <div class="countdown">
@@ -735,15 +734,20 @@ footer p {
     </div>
 
     <div class="birthday-message" id="birthdayMessage">
+
         🎉 IT'S ROHITH'S BIRTHDAY! 🎉
-        <br>
-        ❤️ HAPPY 20TH BIRTHDAY! ❤️
+        <br><br>
+        ❤️ HAPPY 19TH BIRTHDAY! ❤️
+        <br><br>
+        🎂 Welcome to 19! 🎂
+
     </div>
 
 </section>
 
 
-<!-- FRIENDSHIP -->
+<!-- ================= FRIENDSHIP ================= -->
+
 <section class="friendship">
 
     <h2 class="section-title">
@@ -760,13 +764,15 @@ footer p {
             1 ❤️
         </div>
 
-        <h3>Beautiful Year of Friendship</h3>
+        <h3>
+            One Beautiful Year of Friendship
+        </h3>
 
         <p>
             One year of friendship may sound like just a number,
             but behind that number are countless conversations,
-            silly moments, laughs, fights, memories and memories
-            that I will always cherish. 🥹❤️
+            silly moments, laughs, memories and unforgettable
+            moments that I'll always cherish. 🥹❤️
         </p>
 
         <br>
@@ -774,7 +780,7 @@ footer p {
         <p>
             Thank you for being a part of my life, Rohith.
             Here's to another year of annoying each other,
-            laughing together and making unforgettable memories! 😂❤️
+            laughing together and making even more memories! 😂❤️
         </p>
 
     </div>
@@ -782,7 +788,8 @@ footer p {
 </section>
 
 
-<!-- FOUR MAIN PHOTOS -->
+<!-- ================= PHOTOS ================= -->
+
 <section class="photos">
 
     <h2 class="section-title">
@@ -796,22 +803,22 @@ footer p {
     <div class="photo-grid">
 
         <div class="photo-card">
-            <img src="photo1.jpg" alt="Rohith memory 1">
+            <img src="photo1.jpg" alt="Rohith photo 1">
             <p>✨ One of my favourite moments</p>
         </div>
 
         <div class="photo-card">
-            <img src="photo2.jpg" alt="Rohith memory 2">
+            <img src="photo2.jpg" alt="Rohith photo 2">
             <p>😂 The memories we made</p>
         </div>
 
         <div class="photo-card">
-            <img src="photo3.jpg" alt="Rohith memory 3">
+            <img src="photo3.jpg" alt="Rohith photo 3">
             <p>❤️ A moment to remember</p>
         </div>
 
         <div class="photo-card">
-            <img src="photo4.jpg" alt="Rohith memory 4">
+            <img src="photo4.jpg" alt="Rohith photo 4">
             <p>🫂 One for the memories</p>
         </div>
 
@@ -820,7 +827,8 @@ footer p {
 </section>
 
 
-<!-- MEMORIES -->
+<!-- ================= MEMORY WALL ================= -->
+
 <section class="memories">
 
     <h2 class="section-title">
@@ -868,7 +876,8 @@ footer p {
 </section>
 
 
-<!-- PERSONAL MESSAGE -->
+<!-- ================= MESSAGE ================= -->
+
 <section class="message-section">
 
     <h2 class="section-title">
@@ -878,619 +887,4 @@ footer p {
     <div class="message-card">
 
         <p>
-            Dear Rohith ❤️,
-        </p>
-
-        <p>
-            Happy Birthday! 🎂🎉
-        </p>
-
-        <p>
-            I don't know if one year is a long time or a short time,
-            but I know that this one year gave me some really
-            beautiful memories.
-        </p>
-
-        <p>
-            Thank you for every laugh, every conversation,
-            every stupid moment and even every little fight. 😂
-        </p>
-
-        <p>
-            Life changes, people change and time keeps moving...
-            but I hope our friendship keeps getting stronger
-            with every year. 🫂❤️
-        </p>
-
-        <p>
-            Keep smiling, keep being yourself and keep achieving
-            everything you dream about. ✨
-        </p>
-
-        <p>
-            I hope this birthday brings you lots of happiness,
-            success and unforgettable moments. ❤️
-        </p>
-
-        <p class="signature">
-            Happy Birthday once again, Rohith! 🎂❤️
-            <br>
-            Cheers to 1 year of friendship! 🥂✨
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- CAKE -->
-<section class="cake-section">
-
-    <h2 class="section-title">
-        🎂 Make a Wish!
-    </h2>
-
-    <p class="section-subtitle">
-        Click the cake to blow out the candle! 🕯️
-    </p>
-
-    <div class="cake" onclick="blowCandle()">
-
-        <div class="flame" id="flame"></div>
-
-        <div class="candle"></div>
-
-        <div class="cake-top"></div>
-
-        <div class="cake-base"></div>
-
-    </div>
-
-    <p class="cake-hint" id="cakeHint">
-        🕯️ Click me!
-    </p>
-
-</section>
-
-
-<!-- GIFT -->
-<section class="gift-section">
-
-    <h2 class="section-title">
-        🎁 One Last Surprise
-    </h2>
-
-    <p class="section-subtitle">
-        There's something waiting for you...
-    </p>
-
-    <div class="gift" onclick="openGift()">
-
-        <div class="gift-lid"></div>
-
-        <div class="gift-box"></div>
-
-        <div class="gift-ribbon-v"></div>
-
-        <div class="gift-ribbon-h"></div>
-
-    </div>
-
-    <p>
-        👆 Click the gift!
-    </p>
-
-    <div class="gift-message" id="giftMessage">
-
-        <h2>💖 Surprise! 💖</h2>
-
-        <br>
-
-        <p>
-            The gift isn't something that can be wrapped...
-        </p>
-
-        <p>
-            It's all the memories we've made together. 🥹❤️
-        </p>
-
-        <p>
-            And hopefully, this is just the beginning
-            of many more years of friendship.
-        </p>
-
-        <br>
-
-        <h3>
-            Happy Birthday, Rohith! 🎂🎉❤️
-        </h3>
-
-    </div>
-
-</section>
-
-
-<!-- GAME -->
-<section class="game-section">
-
-    <h2 class="section-title">
-        🎮 Birthday Game!
-    </h2>
-
-    <p class="section-subtitle">
-        Catch as many hearts as you can! ❤️
-    </p>
-
-    <div class="score">
-        ❤️ Score: <span id="score">0</span>
-    </div>
-
-    <div class="game-area" id="gameArea"></div>
-
-    <button class="btn" onclick="startGame()">
-        🎮 Start Game
-    </button>
-
-</section>
-
-
-<!-- FOOTER -->
-<footer>
-
-    <h2>
-        ❤️ Made With Love For Rohith ❤️
-    </h2>
-
-    <p>
-        Celebrating your birthday 🎂
-        and 1 amazing year of friendship 🤝
-    </p>
-
-    <p>
-        May this be the first of many more beautiful years. ✨
-    </p>
-
-    <br>
-
-    <p>
-        🎉 Happy Birthday! 🎉
-    </p>
-
-</footer>
-
-
-<script>
-
-/* =====================================================
-   PERSONAL DETAILS
-===================================================== */
-
-const friendName = "Rohith";
-
-/*
-   Rohith's date of birth:
-   September 15, 2006
-*/
-
-const birthDate = new Date("2006-09-15T00:00:00");
-
-
-/* =====================================================
-   BIRTHDAY COUNTDOWN
-===================================================== */
-
-function getNextBirthday() {
-
-    const now = new Date();
-
-    let year = now.getFullYear();
-
-    let nextBirthday =
-        new Date(year, 8, 15, 0, 0, 0);
-
-    if (nextBirthday <= now) {
-        nextBirthday =
-            new Date(year + 1, 8, 15, 0, 0, 0);
-    }
-
-    return nextBirthday;
-}
-
-
-function updateCountdown() {
-
-    const now = new Date();
-
-    const currentYear = now.getFullYear();
-
-    const birthdayToday =
-        now.getMonth() === 8 &&
-        now.getDate() === 15;
-
-
-    /* If today is birthday */
-
-    if (birthdayToday) {
-
-        document.getElementById("birthdayMessage")
-            .style.display = "block";
-
-        document.getElementById("years").textContent =
-            currentYear - birthDate.getFullYear();
-
-        document.getElementById("months").textContent = "0";
-        document.getElementById("weeks").textContent = "0";
-        document.getElementById("days").textContent = "0";
-        document.getElementById("hours").textContent = "0";
-        document.getElementById("minutes").textContent = "0";
-        document.getElementById("seconds").textContent = "0";
-
-        return;
-    }
-
-
-    const nextBirthday = getNextBirthday();
-
-    let difference =
-        nextBirthday.getTime() - now.getTime();
-
-
-    let totalSeconds =
-        Math.floor(difference / 1000);
-
-    let days =
-        Math.floor(totalSeconds / 86400);
-
-    totalSeconds %= 86400;
-
-    let hours =
-        Math.floor(totalSeconds / 3600);
-
-    totalSeconds %= 3600;
-
-    let minutes =
-        Math.floor(totalSeconds / 60);
-
-    let seconds =
-        totalSeconds % 60;
-
-
-    /*
-       Visual breakdown for the countdown.
-    */
-
-    let years = 0;
-    let months = 0;
-
-    const birthdayThisYear =
-        new Date(currentYear, 8, 15);
-
-    if (now < birthdayThisYear) {
-
-        const previousBirthday =
-            new Date(currentYear - 1, 8, 15);
-
-        const monthDifference =
-            (birthdayThisYear.getFullYear() -
-            previousBirthday.getFullYear()) * 12 +
-            birthdayThisYear.getMonth() -
-            previousBirthday.getMonth();
-
-        if (monthDifference > 0) {
-            months = 11;
-        }
-
-    } else {
-        years = 1;
-        months = 0;
-    }
-
-
-    let weeks =
-        Math.floor(days / 7);
-
-    let remainingDays =
-        days % 7;
-
-
-    document.getElementById("years").textContent =
-        years;
-
-    document.getElementById("months").textContent =
-        months;
-
-    document.getElementById("weeks").textContent =
-        weeks;
-
-    document.getElementById("days").textContent =
-        remainingDays;
-
-    document.getElementById("hours").textContent =
-        String(hours).padStart(2, "0");
-
-    document.getElementById("minutes").textContent =
-        String(minutes).padStart(2, "0");
-
-    document.getElementById("seconds").textContent =
-        String(seconds).padStart(2, "0");
-}
-
-
-updateCountdown();
-
-setInterval(updateCountdown, 1000);
-
-
-/* =====================================================
-   FLOATING HEARTS
-===================================================== */
-
-const heartsContainer =
-    document.querySelector(".hearts");
-
-const heartSymbols =
-    ["❤️", "💗", "💕", "💖", "💓", "💞", "🌸"];
-
-for (let i = 0; i < 25; i++) {
-
-    const heart =
-        document.createElement("div");
-
-    heart.className = "heart";
-
-    heart.textContent =
-        heartSymbols[
-            Math.floor(
-                Math.random() * heartSymbols.length
-            )
-        ];
-
-    heart.style.left =
-        Math.random() * 100 + "%";
-
-    heart.style.fontSize =
-        14 + Math.random() * 22 + "px";
-
-    heart.style.animationDuration =
-        6 + Math.random() * 9 + "s";
-
-    heart.style.animationDelay =
-        Math.random() * 8 + "s";
-
-    heartsContainer.appendChild(heart);
-}
-
-
-/* =====================================================
-   CONFETTI
-===================================================== */
-
-function createConfetti() {
-
-    const symbols =
-        ["🎉", "🎊", "❤️", "✨", "💖", "🌸"];
-
-    for (let i = 0; i < 70; i++) {
-
-        const piece =
-            document.createElement("div");
-
-        piece.className = "confetti";
-
-        piece.textContent =
-            symbols[
-                Math.floor(
-                    Math.random() * symbols.length
-                )
-            ];
-
-        piece.style.left =
-            Math.random() * 100 + "vw";
-
-        piece.style.fontSize =
-            12 + Math.random() * 20 + "px";
-
-        piece.style.animationDuration =
-            2 + Math.random() * 3 + "s";
-
-        piece.style.animationDelay =
-            Math.random() * 1.5 + "s";
-
-        document.body.appendChild(piece);
-
-        setTimeout(() => {
-            piece.remove();
-        }, 5000);
-    }
-}
-
-
-/* Start confetti after page opens */
-
-setTimeout(createConfetti, 1200);
-
-
-/* =====================================================
-   CAKE
-===================================================== */
-
-function blowCandle() {
-
-    const flame =
-        document.getElementById("flame");
-
-    const hint =
-        document.getElementById("cakeHint");
-
-    flame.style.display = "none";
-
-    hint.innerHTML =
-        "🎉 Wish made! Happy Birthday Rohith! ❤️";
-
-    createConfetti();
-}
-
-
-/* =====================================================
-   GIFT
-===================================================== */
-
-function openGift() {
-
-    const message =
-        document.getElementById("giftMessage");
-
-    const gift =
-        document.querySelector(".gift");
-
-    message.style.display = "block";
-
-    gift.style.transform =
-        "scale(0.85)";
-
-    setTimeout(() => {
-
-        message.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-        });
-
-    }, 200);
-
-    createConfetti();
-}
-
-
-/* =====================================================
-   HEART CATCHING GAME
-===================================================== */
-
-let score = 0;
-let gameTimer = null;
-
-
-function startGame() {
-
-    const gameArea =
-        document.getElementById("gameArea");
-
-    score = 0;
-
-    document.getElementById("score")
-        .textContent = score;
-
-    gameArea.innerHTML = "";
-
-    if (gameTimer) {
-        clearInterval(gameTimer);
-    }
-
-    gameTimer =
-        setInterval(createGameHeart, 650);
-
-    setTimeout(() => {
-
-        clearInterval(gameTimer);
-
-        gameTimer = null;
-
-        gameArea.innerHTML =
-            `
-            <div style="
-                position:absolute;
-                inset:0;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                flex-direction:column;
-                font-size:22px;
-                font-weight:bold;
-                color:#e83e72;
-            ">
-                🎉 Game Over! 🎉
-                <br><br>
-                ❤️ Your Score: ${score}
-                <br><br>
-                Happy Birthday Rohith! 🎂
-            </div>
-            `;
-
-    }, 15000);
-}
-
-
-function createGameHeart() {
-
-    const gameArea =
-        document.getElementById("gameArea");
-
-    const heart =
-        document.createElement("div");
-
-    heart.className =
-        "game-heart";
-
-    heart.textContent =
-        ["❤️", "💖", "💕", "💗"][
-            Math.floor(Math.random() * 4)
-        ];
-
-    const maxX =
-        gameArea.clientWidth - 50;
-
-    const maxY =
-        gameArea.clientHeight - 50;
-
-    heart.style.left =
-        Math.random() * maxX + "px";
-
-    heart.style.top =
-        Math.random() * maxY + "px";
-
-
-    heart.onclick = function() {
-
-        score++;
-
-        document.getElementById("score")
-            .textContent = score;
-
-        heart.remove();
-    };
-
-
-    gameArea.appendChild(heart);
-
-
-    setTimeout(() => {
-
-        if (heart.parentElement) {
-            heart.remove();
-        }
-
-    }, 1200);
-}
-
-
-/* =====================================================
-   AUTO BIRTHDAY CONFETTI
-===================================================== */
-
-const today =
-    new Date();
-
-if (
-    today.getMonth() === 8 &&
-    today.getDate() === 15
-) {
-
-    setTimeout(() => {
-        createConfetti();
-    }, 2500);
-
-}
-
-</script>
-
-</body>
-</html>
+            Dear
